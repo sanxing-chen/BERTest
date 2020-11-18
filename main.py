@@ -122,7 +122,9 @@ if __name__ == "__main__":
     p7 = metamorphic_generator.Perturb_add_negation_phrase(dataset)
 
     print ("---------------metamorphic relation 1: add typo ------------------")
-    metamorphic_tester.run_perburtation(p1,"INV")
+    fail_test = metamorphic_tester.run_perburtation(p1,"INV")
+    print ("FAILING TESTS:", fail_test)
+
     print ("---------------metamorphic relation 2: change name ------------------")
     metamorphic_tester.run_perburtation(p2,"INV")
     print ("---------------metamorphic relation 3: change location ------------------")
