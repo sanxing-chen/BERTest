@@ -11,34 +11,41 @@ class MetamorphicGenerator:
     def __init__(self):
         pass
 
-    #invariant: add typo eg. amazing --> mmazing
-    def Perturb_add_typo(self,dataset):
+    # invariant: add typo eg. amazing --> mmazing
+    @staticmethod
+    def Perturb_add_typo(dataset):
         return Perturb.perturb(dataset, Perturb.add_typos)
 
-    def Perturb_change_names(self,pdataset):
+    @staticmethod
+    def Perturb_change_names(pdataset):
         return Perturb.perturb(pdataset, Perturb.change_names)
 
-    #invariant: change location eg. New York --> CVille
-    def Perturb_change_location(self,pdataset):
+    # invariant: change location eg. New York --> CVille
+    @staticmethod
+    def Perturb_change_location(pdataset):
         return Perturb.perturb(pdataset, Perturb.change_location)
 
-    #invariant:change numbers eg. 1 --> 3
-    def Perturb_change_number(self,pdataset):
+    # invariant:change numbers eg. 1 --> 3
+    @staticmethod
+    def Perturb_change_number(pdataset):
         return Perturb.perturb(pdataset, Perturb.change_number)
 
-    #invariant: add or remove punctuation. (might not be very useful though)
-    def Perturb_punctuation(self,pdataset):
+    # invariant: add or remove punctuation. (might not be very useful though)
+    @staticmethod
+    def Perturb_punctuation(pdataset):
         return Perturb.perturb(pdataset, Perturb.punctuation)
 
-    #add negation eg. like --> don't like 
-    #prediction should change
-    #negation function doesn't work on many sentences
-    def Perturb_add_negation(self,pdataset):
+    # add negation eg. like --> don't like
+    # prediction should change
+    # negation function doesn't work on many sentences
+    @staticmethod
+    def Perturb_add_negation(pdataset):
         return Perturb.perturb(pdataset, Perturb.add_negation)
 
-    #add negation phrase at the end of the sentence
-    #prediction should mono decreasing
-    def Perturb_add_negation_phrase(self,dataset):
+    # add negation phrase at the end of the sentence
+    # prediction should mono decreasing
+    @staticmethod
+    def Perturb_add_negation_phrase(dataset):
         def add_negative_phrase(x):
             phrases = ['Anyway, I thought it was bad.', 'Having said this, I hated it', 'The director should be fired.']
             return ['%s %s' % (x, p) for p in phrases]
