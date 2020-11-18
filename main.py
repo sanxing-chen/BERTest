@@ -147,19 +147,18 @@ def plot_experiment(model, guided, label):
     cov_incs = metamorphic_tester.run_search(guided=guided)
     plt.plot(cov_incs, label=label)
 
-def draw_comparison():
+def draw_comparison(nsample=1):
     model = NeuralModel()
 
-    plot_experiment(model, True, "guided 1")
-    plot_experiment(model, True, "guided 2")
-    plot_experiment(model, False, "unguided 1")
-    plot_experiment(model, False, "unguided 2")
+    for i in range(nsample):
+        plot_experiment(model, True, "guided " + str(i))
+        plot_experiment(model, False, "unguided " + str(i))
 
     plt.legend()
     plt.savefig('cov.png', dpi=300, bbox_inches='tight')
 
 if __name__ == "__main__":
-    draw_comparison()
+    draw_comparison(nsample=2)
 
     # model = NeuralModel()
     # cov_metrics = DeepxploreCoverage()
