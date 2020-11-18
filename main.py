@@ -8,6 +8,7 @@ from metamorphicTesting.generator import MetamorphicGenerator
 from metamorphicTesting.tester import MetamorphicTester
 import spacy
 from pattern.en import sentiment
+import matplotlib.pyplot as plt
 
 # from transformers import pipeline
 # classifier = pipeline('sentiment-analysis')
@@ -140,24 +141,28 @@ def simple_perturb_test(metamorphic_tester):
     print("---------------metamorphic relation 7: add negation phrase------------------")
     metamorphic_tester.run_perturbation(p7, "MONO_DEC")
 
+def plot_experiment(model, guided, label):
+    cov_metrics = DeepxploreCoverage()
+    metamorphic_tester = MetamorphicTester(model, cov_metrics)
+    cov_incs = metamorphic_tester.run_search(guided=guided)
+    plt.plot(cov_incs, label=label)
+
+def draw_comparison():
+    model = NeuralModel()
+
+    plot_experiment(model, True, "guided 1")
+    plot_experiment(model, True, "guided 2")
+    plot_experiment(model, False, "unguided 1")
+    plot_experiment(model, False, "unguided 2")
+
+    plt.legend()
+    plt.savefig('cov.png', dpi=300, bbox_inches='tight')
 
 if __name__ == "__main__":
-    model = NeuralModel()
-    cov_metrics = DeepxploreCoverage()
+    draw_comparison()
 
-    metamorphic_tester = MetamorphicTester(model, cov_metrics)
-    cov_incs = metamorphic_tester.run_search(guided=True)
-    print(cov_incs)
-
-    cov_metrics = DeepxploreCoverage()
-    metamorphic_tester = MetamorphicTester(model, cov_metrics)
-    cov_incs = metamorphic_tester.run_search(guided=True)
-    print(cov_incs)
-
-    cov_metrics = DeepxploreCoverage()
-    metamorphic_tester = MetamorphicTester(model, cov_metrics)
-    cov_incs = metamorphic_tester.run_search(guided=False)
-    print(cov_incs)
+    # model = NeuralModel()
+    # cov_metrics = DeepxploreCoverage()
 
     # simple_cov_test(model, cov_metrics)
     # simple_perturb_test(metamorphic_tester)
