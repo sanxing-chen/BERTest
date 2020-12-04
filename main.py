@@ -144,7 +144,15 @@ def simple_perturb_test(metamorphic_tester):
     metamorphic_tester.run_perturbation(p7, "MONO_DEC")
 
 def run_experiment(model, cov_metrics, guided, label):
-    metamorphic_tester = MetamorphicTester(model, cov_metrics)
+    # Read the data from the SST-2 dataset
+    base = Path('SST-2')
+    sents = base / 'datasetSentences.txt'
+    split = base / 'datasetSplit.txt'
+    df = pd.read_table(sents)
+    df = df.join(pd.read_csv(split).set_index('sentence_index'), on='sentence_index')
+    # Use the development set
+    seeds = df[df['splitset_label']==2]['sentence'].head(n=200).values.tolist()
+    metamorphic_tester = MetamorphicTester(model, cov_metrics, seeds)
     cov_incs, fail_test_list = metamorphic_tester.run_search(guided=guided)
     return pd.DataFrame(dict(time=list(range(len(cov_incs))), value=cov_incs, Guide=label))
 

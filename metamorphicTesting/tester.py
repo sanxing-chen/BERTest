@@ -7,18 +7,10 @@ from metamorphicTesting.generator import MetamorphicGenerator
 import random
 
 class MetamorphicTester:
-    def __init__(self, neur_model, cov_metrics):
+    def __init__(self, neur_model, cov_metrics, seeds):
         self.model = neur_model
         self.cov_metrics = cov_metrics
-        self.seeds = ['This was a very nice movie directed by John Smith.',
-               'Mary Keen was brilliant!',
-               'I hated everything about New York.',
-               'This movie was very bad!',
-               'Jerry gave me 8 delicious apples.',
-               'I really liked this movie.',
-               'just bad.',
-               'amazing.',
-               ]
+        self.seeds = seeds
         self.nlp = spacy.load('en_core_web_sm')
         self.pseeds = list(self.nlp.pipe(self.seeds))
         
