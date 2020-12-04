@@ -9,6 +9,8 @@ from metamorphicTesting.tester import MetamorphicTester
 import spacy
 from pattern.en import sentiment
 import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
 
 # from transformers import pipeline
 # classifier = pipeline('sentiment-analysis')
@@ -141,24 +143,27 @@ def simple_perturb_test(metamorphic_tester):
     print("---------------metamorphic relation 7: add negation phrase------------------")
     metamorphic_tester.run_perturbation(p7, "MONO_DEC")
 
-def plot_experiment(model, guided, label):
-    cov_metrics = DeepxploreCoverage()
+def run_experiment(model, cov_metrics, guided, label):
     metamorphic_tester = MetamorphicTester(model, cov_metrics)
     cov_incs, fail_test_list = metamorphic_tester.run_search(guided=guided)
-    plt.plot(cov_incs, label=label)
+    return pd.DataFrame(dict(time=list(range(len(cov_incs))), value=cov_incs, Guide=label))
 
 def draw_comparison(nsample=1):
     model = NeuralModel()
 
+    df = pd.DataFrame()
     for i in range(nsample):
-        plot_experiment(model, True, "guided " + str(i))
-        plot_experiment(model, False, "unguided " + str(i))
+        cov_metrics = DeepxploreCoverage()
+        df = df.append(run_experiment(model, cov_metrics, True, "Deepxplore"), ignore_index=True)
+        cov_metrics = DeepxploreCoverage()
+        df = df.append(run_experiment(model, cov_metrics, False, "None"), ignore_index=True)
 
-    plt.legend()
+    ax = sns.relplot(x="time", y="value", hue="Guide", kind="line", data=df)
+    ax.set(xlabel='#Tests', ylabel='#Covered Neurons')
     plt.savefig('cov.png', dpi=300, bbox_inches='tight')
 
 if __name__ == "__main__":
-    draw_comparison(nsample=2)
+    draw_comparison(nsample=3)
 
     # model = NeuralModel()
     # cov_metrics = DeepxploreCoverage()
