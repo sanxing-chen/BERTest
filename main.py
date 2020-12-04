@@ -43,12 +43,12 @@ class NeuralModel:
         return scores, output_state
 
 
-TEST_SPACE = (768,)
+DIM = 768
 
 
 class DeepxploreCoverage:
     def __init__(self, threshold=1.0):
-        self.cov_map = np.zeros(TEST_SPACE, dtype=np.bool)
+        self.cov_map = np.zeros((DIM,), dtype=np.bool)
         self.threshold = threshold
 
     def get_cov_inc(self, new_states: np.ndarray, add_inc_to_cov=False):
@@ -61,6 +61,29 @@ class DeepxploreCoverage:
     
     def get_current(self):
         return self.cov_map.sum()
+
+class NearestNeighborCoverage:
+    def __init__(self, threshold=4):
+        self.cov_map = np.zeros((0, DIM))
+        self.threshold = threshold
+
+    def get_cov_inc(self, new_states: np.ndarray, add_inc_to_cov=False):
+        new_states = new_states[np.newaxis, :]
+        if self.cov_map.shape[0] == 0:
+            cov_inc = 1
+        else:
+            # Euclidean distance
+            diff = np.sqrt(((new_states - self.cov_map) ** 2).sum(axis=1))
+            # print(diff)
+            # if self.get_current() == 10:
+            #     exit()
+            cov_inc = 1 if np.all(diff > self.threshold) else 0
+        if add_inc_to_cov and cov_inc:
+            self.cov_map = np.concatenate([new_states, self.cov_map], axis=0)
+        return cov_inc
+    
+    def get_current(self):
+        return self.cov_map.shape[0]
 
 def simple_cov_test(model, cov_metrics):
     test_sent = "We are very happy to include pipeline into the transformers repository."
@@ -161,9 +184,9 @@ def draw_comparison(nsample=1):
 
     df = pd.DataFrame()
     for i in range(nsample):
-        cov_metrics = DeepxploreCoverage()
-        df = df.append(run_experiment(model, cov_metrics, True, "Deepxplore"), ignore_index=True)
-        cov_metrics = DeepxploreCoverage()
+        cov_metrics = NearestNeighborCoverage()
+        df = df.append(run_experiment(model, cov_metrics, True, "Nearest"), ignore_index=True)
+        cov_metrics = NearestNeighborCoverage()
         df = df.append(run_experiment(model, cov_metrics, False, "None"), ignore_index=True)
 
     ax = sns.relplot(x="time", y="value", hue="Guide", kind="line", data=df)
