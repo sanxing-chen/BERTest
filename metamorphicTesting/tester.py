@@ -53,6 +53,8 @@ class MetamorphicTester:
 
         pqueue = []
         max_tries = 150
+        num_failure = 0
+        fail_test_list = []
         while(len(cov_incs) < max_tries):
             if len(sents) == 0:
                 sents += self.seeds[:]
@@ -66,6 +68,9 @@ class MetamorphicTester:
             if len(perturb.data) == 0:
                 continue
             fail_test, cov_inc = self.run_perturbation(perturb, expect_bahavior)
+            if len(fail_test) > 0:
+                fail_test_list += fail_test
+                num_failure += 1
             cov_incs.append(cov_inc[1])
             assert cov_inc[0] == 0
             if guided:
@@ -78,7 +83,8 @@ class MetamorphicTester:
                 sents.append(perturb.data[0][1])
         for i in range(1, len(cov_incs)):
             cov_incs[i] += cov_incs[i - 1]
-        return cov_incs
+        print("num_failure", num_failure)
+        return cov_incs, fail_test_list
 
     # return sentences pair that failed
     def run_perturbation(self, perturb, expect_bahavior):

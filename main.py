@@ -144,7 +144,7 @@ def simple_perturb_test(metamorphic_tester):
 def plot_experiment(model, guided, label):
     cov_metrics = DeepxploreCoverage()
     metamorphic_tester = MetamorphicTester(model, cov_metrics)
-    cov_incs = metamorphic_tester.run_search(guided=guided)
+    cov_incs, fail_test_list = metamorphic_tester.run_search(guided=guided)
     plt.plot(cov_incs, label=label)
 
 def draw_comparison(nsample=1):
