@@ -110,7 +110,7 @@ def simple_cov_test(model, cov_metrics):
     # [[0.00218062 0.99781936]] 0
 
 
-def simple_perturb_test(metamorphic_tester):
+def simple_perturb_test(metamorphic_tester, seed):
     # example dataset
     dataset = ['This was a very nice movie directed by John Smith.',
                'Mary Keen was brilliant!',
@@ -123,10 +123,10 @@ def simple_perturb_test(metamorphic_tester):
                ]
 
     nlp = spacy.load('en_core_web_sm')
-    pdataset = list(nlp.pipe(dataset))
+    pdataset = list(nlp.pipe(seed))
 
     # add typo
-    p1 = MetamorphicGenerator.Perturb_add_typo(dataset)
+    p1 = MetamorphicGenerator.Perturb_add_typo(seed)
 
     # change name
     p2 = MetamorphicGenerator.Perturb_change_names(pdataset)
@@ -147,11 +147,10 @@ def simple_perturb_test(metamorphic_tester):
     p6 = MetamorphicGenerator.Perturb_add_negation(pdataset_negation)
 
     # add negation phrase
-    p7 = MetamorphicGenerator.Perturb_add_negation_phrase(dataset)
+    p7 = MetamorphicGenerator.Perturb_add_negation_phrase(seed)
 
     print("---------------metamorphic relation 1: add typo ------------------")
     fail_test = metamorphic_tester.run_perturbation(p1, "INV")
-    print("FAILING TESTS:", fail_test)
 
     print("---------------metamorphic relation 2: change name ------------------")
     metamorphic_tester.run_perturbation(p2, "INV")
@@ -194,10 +193,26 @@ def draw_comparison(nsample=1):
     plt.savefig('cov.png', dpi=300, bbox_inches='tight')
 
 if __name__ == "__main__":
-    draw_comparison(nsample=3)
-
+    draw_comparison(nsample=1)
+    
+    # dataset = ['This was a very nice movie directed by John Smith.',
+    #            'Mary Keen was brilliant!',
+    #            'I hated everything about New York.',
+    #            'This movie was very bad!',
+    #            'Jerry gave me 8 delicious apples.',
+    #            'I really liked this movie.',
+    #            'just bad.',
+    #            'amazing.',
+    #            ]
+    # base = Path('SST-2')
+    # base = Path('SST-2')
+    # sents = base / 'datasetSentences.txt'
+    # split = base / 'datasetSplit.txt'
+    # df = pd.read_table(sents)
+    # df = df.join(pd.read_csv(split).set_index('sentence_index'), on='sentence_index')
+    # seeds = df[df['splitset_label']==2]['sentence'].head(n=200).values.tolist()
     # model = NeuralModel()
     # cov_metrics = DeepxploreCoverage()
-
+    # metamorphic_tester = MetamorphicTester(model, cov_metrics,seeds)
     # simple_cov_test(model, cov_metrics)
-    # simple_perturb_test(metamorphic_tester)
+    # simple_perturb_test(metamorphic_tester, seeds)

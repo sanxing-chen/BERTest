@@ -44,7 +44,7 @@ class MetamorphicTester:
         cov_incs.append(init_cov)
 
         pqueue = []
-        max_tries = 150
+        max_tries = 300
         num_failure = 0
         fail_test_list = []
         while(len(cov_incs) < max_tries):
@@ -53,7 +53,7 @@ class MetamorphicTester:
             if len(pqueue) > 0:
                 pid = pqueue.pop(0)
             else:
-                pid = random.randint(0, 5)
+                pid = random.randint(1, 5)
             sent = sents.pop(0)
             # print(sent, pid)
             perturb, expect_bahavior = self.get_perturbation(sent, pid)
@@ -64,7 +64,7 @@ class MetamorphicTester:
                 fail_test_list += fail_test
                 num_failure += 1
             cov_incs.append(cov_inc[1])
-            assert cov_inc[0] == 0
+            # assert cov_inc[0] == 0
             if guided:
                 if cov_inc[1]:
                     sents.append(sent)
@@ -95,6 +95,8 @@ class MetamorphicTester:
         sentiment = []
         cov_inc = []
 
+        pos = []
+        neg = []
         # Ensure there is only one test pair
         test_pair = test_pair[:2]
 
@@ -107,11 +109,22 @@ class MetamorphicTester:
                 sentiment.append(1)  # positive
             else:
                 sentiment.append(0)  # neutral
+            pos.append(pred[0][1])
+            neg.append(pred[0][0])
         # print ("sentiment prediction",sentiment)
 
         if expect_bahavior == "INV":  # prediction should not change
             success = all(ele == sentiment[0] for ele in sentiment)
-            result = 1 if success else 0
+            if not success:
+                result = 0
+            # else: result = 0
+            else:
+                if (abs(pos[0] - pos[1]) > 0.1): #positive score differences cannot be greater than threshold 10%
+                    print (pos[0],neg[0],pos[1],neg[1],test_pair[0],test_pair[1])
+                    result = 0
+                else:
+                    result = 1
+            
 
         elif expect_bahavior == "CHANGE":  # prediction should change
             # pass if original and negation sentence prediction change
@@ -121,6 +134,9 @@ class MetamorphicTester:
             # p7 sentiment = sentiment of new,old pair: [new, old, new, old]
             # sentiment at even index i should not be less than i+1
             # pass if all pairs' is mono decreasing
-            result = 0 if sentiment[0] < sentiment[1] else 1
-        
+            if (pos[1] - pos[0] >= 0.05): #modified positve score - original positive score should decrease more than 5%
+                result = 0
+            else:
+                result = 1
+            # result = 0 if sentiment[0] < sentiment[1] else 1      
         return result, cov_inc
