@@ -1,5 +1,4 @@
-import checklist
-from checklist.perturb import Perturb
+from .checklist.perturb import Perturb
 import numpy as np
 import spacy
 from pattern.en import sentiment

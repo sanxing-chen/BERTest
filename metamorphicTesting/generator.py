@@ -1,11 +1,10 @@
-import checklist
-from checklist.test_suite import TestSuite
-from checklist.perturb import Perturb
-from checklist.test_types import MFT, INV, DIR
-from checklist.pred_wrapper import PredictorWrapper
-from checklist.expect import Expect
+from .checklist.test_suite import TestSuite
+from .checklist.perturb import Perturb
+from .checklist.test_types import MFT, INV, DIR
+from .checklist.pred_wrapper import PredictorWrapper
+from .checklist.expect import Expect
 import numpy as np
-
+import random
 
 class MetamorphicGenerator:
     def __init__(self):
@@ -47,6 +46,7 @@ class MetamorphicGenerator:
     @staticmethod
     def Perturb_add_negation_phrase(dataset):
         def add_negative_phrase(x):
-            phrases = ['Anyway, I thought it was bad.', 'Having said this, I hated it', 'The director should be fired.']
-            return ['%s %s' % (x, p) for p in phrases]
+            phrases = [ 'Having said this, I hated it', 'Anyway, I thought it was bad.', 'I do not like this', 'Bad!','Not good!']
+            rand = random.randint(0, 4)
+            return ['%s %s' % (x, phrases[rand])]
         return Perturb.perturb(dataset, add_negative_phrase)
