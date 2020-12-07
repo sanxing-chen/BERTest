@@ -60,9 +60,6 @@ class MetamorphicTester:
             else:
                 pid = random.randint(1, 7)
 
-            sent = sents.pop(0)
-
-
 
             # print(sent, pid)
             pid_count[pid] += 1
