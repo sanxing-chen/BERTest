@@ -19,6 +19,7 @@ class MetamorphicTester:
             MetamorphicGenerator.Perturb_change_location,
             MetamorphicGenerator.Perturb_change_number,
             MetamorphicGenerator.Perturb_punctuation,
+            MetamorphicGenerator.Perturb_add_irrelevant_phrase,
             # MetamorphicGenerator.Perturb_add_negation,
             MetamorphicGenerator.Perturb_add_negation_phrase
         ]
@@ -26,35 +27,40 @@ class MetamorphicTester:
 
     def get_perturbation(self, sent, pid):
         dataset = [sent]
-        if pid not in [0, 5]:
+        if pid not in [0, 6]:
             dataset = list(self.nlp.pipe(dataset))
         pert_sent = self.plist[pid](dataset)
-        expectation = 'INV' if pid < 5 else 'MONO_DEC'
+        expectation = 'INV' if pid < 6 else 'MONO_DEC'
         return pert_sent, expectation
     
     def run_search(self, guided=False):
         cov_incs = []
-        sents = self.seeds[:]
+        sents = [(s, 0) for s in self.seeds]
 
         for sent in sents:
-            pred, output_state = self.model.run_example(sent)
+            pred, output_state = self.model.run_example(sent[0])
             cov_inc = self.cov_metrics.get_cov_inc(output_state, True)
         init_cov = self.cov_metrics.get_current()
         cov_incs.append(init_cov)
 
+        MAX_TRIES = 1000
+        MAX_PERT = 2
         pqueue = []
-        max_tries = 300
         num_failure = 0
         fail_test_list = []
-        while(len(cov_incs) < max_tries):
+        pid_count = [0] * len(self.plist)
+        while(len(cov_incs) < MAX_TRIES):
             if len(sents) == 0:
-                sents += self.seeds[:]
+                sents += [(s, 0) for s in self.seeds]
+            sent, n_perturb = sents.pop(0)
+
             if len(pqueue) > 0:
                 pid = pqueue.pop(0)
             else:
-                pid = random.randint(1, 5)
-            sent = sents.pop(0)
+                pid = random.randint(1, 6)
+
             # print(sent, pid)
+            pid_count[pid] += 1
             perturb, expect_bahavior = self.get_perturbation(sent, pid)
             if len(perturb.data) == 0:
                 continue
@@ -68,20 +74,20 @@ class MetamorphicTester:
                 if cov_inc[1]:
                     # If coverage increase, add the original sentence back to the pool,
                     # because it is suspicious
-                    sents.append(sent)
+                    sents.append((sent, n_perturb))
                     pqueue.append(pid)
                     # If the oracle has not been broken, add the perturb sentence to the pool
                     # If it's broken, the oracle won't hold any further
-                    if len(fail_test) == 0:
-                        sents.append(perturb.data[0][1])
+                    if len(fail_test) == 0 and n_perturb < MAX_PERT:
+                        sents.append((perturb.data[0][1], n_perturb + 1))
             else:
-                sents.append(sent)
-                if len(fail_test) == 0:
-                    sents.append(perturb.data[0][1])
+                sents.append((sent, n_perturb))
+                if len(fail_test) == 0 and n_perturb < MAX_PERT:
+                    sents.append((perturb.data[0][1], n_perturb + 1))
         for i in range(1, len(cov_incs)):
             cov_incs[i] += cov_incs[i - 1]
-        print("num_failure", num_failure)
-        return cov_incs, fail_test_list
+        print(guided, "num_failure", num_failure)
+        return cov_incs, fail_test_list, pid_count
 
     # return sentences pair that failed
     def run_perturbation(self, perturb, expect_bahavior):

@@ -50,3 +50,29 @@ class MetamorphicGenerator:
             rand = random.randint(0, 4)
             return ['%s %s' % (x, phrases[rand])]
         return Perturb.perturb(dataset, add_negative_phrase)
+
+
+    @staticmethod
+    def Perturb_add_irrelevant_phrase(dataset):
+        import string
+        def random_string(n):
+            return ''.join(np.random.choice([x for x in string.ascii_letters + string.digits], n))
+        def random_url(n=6):
+            return 'https://t.co/%s' % random_string(n)
+        def random_handle(n=6):
+            return '@%s' % random_string(n)
+
+        # data['sentence']
+
+        def add_irrelevant(sentence):
+            # urls_and_handles = [random_url() for _ in range(5)] + [random_handle() for _ in range(5)]
+            # irrelevant_before = ['@airline '] + urls_and_handles
+            # irrelevant_after = urls_and_handles 
+            # rets = ['%s %s' % (x, sentence) for x in irrelevant_before]
+            # rets += ['%s %s' % (sentence, x) for x in irrelevant_after]
+            my_irrelevant = ['OK.', 'I mean.', 'Yup.', 'Yeah.']
+            rets = ['%s %s' % (x, sentence) for x in my_irrelevant]
+            rand = random.randint(0, 3)
+            return [rets[rand]]
+
+        return Perturb.perturb(dataset, add_irrelevant)
