@@ -11,7 +11,6 @@ from pattern.en import sentiment
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
-
 # from transformers import pipeline
 # classifier = pipeline('sentiment-analysis')
 # results = classifier('We are very happy to include pipeline into the transformers repository.')
@@ -168,15 +167,22 @@ def simple_perturb_test(metamorphic_tester):
 
 def run_experiment(model, cov_metrics, guided, label):
     # Read the data from the SST-2 dataset
-    base = Path('SST-2')
-    sents = base / 'datasetSentences.txt'
-    split = base / 'datasetSplit.txt'
-    df = pd.read_table(sents)
-    df = df.join(pd.read_csv(split).set_index('sentence_index'), on='sentence_index')
+    # base = Path('SST-2')
+    # sents = base / 'datasetSentences.txt'
+    # split = base / 'datasetSplit.txt'
+    # df = pd.read_table(sents)
+    # df = df.join(pd.read_csv(split).set_index('sentence_index'), on='sentence_index')
     # Use the development set
-    seeds = df[df['splitset_label']==2]['sentence'].head(n=200).values.tolist()
-    metamorphic_tester = MetamorphicTester(model, cov_metrics, seeds)
+    # seeds = df[df['splitset_label']==2]['sentence'].head(n=200).values.tolist()
+    dataset = []
+    with open("filter_data/contains2.txt") as file:
+        for line in file: 
+            line = line.strip() 
+            dataset.append(line) 
+
+    metamorphic_tester = MetamorphicTester(model, cov_metrics, dataset)
     cov_incs, fail_test_list = metamorphic_tester.run_search(guided=guided)
+    print(fail_test_list)
     return pd.DataFrame(dict(time=list(range(len(cov_incs))), value=cov_incs, Guide=label))
 
 def draw_comparison(nsample=1):
@@ -194,7 +200,7 @@ def draw_comparison(nsample=1):
     plt.savefig('cov.png', dpi=300, bbox_inches='tight')
 
 if __name__ == "__main__":
-    draw_comparison(nsample=3)
+    draw_comparison(nsample=1)
 
     # model = NeuralModel()
     # cov_metrics = DeepxploreCoverage()
