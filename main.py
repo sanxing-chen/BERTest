@@ -12,6 +12,7 @@ from pattern.en import sentiment
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
+
 # from transformers import pipeline
 # classifier = pipeline('sentiment-analysis')
 # results = classifier('We are very happy to include pipeline into the transformers repository.')
@@ -20,6 +21,8 @@ import pandas as pd
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 MODEL = 'distilbert-base-uncased-finetuned-sst-2-english'
 
+N_LAYER = 3
+DIM = 768 * N_LAYER
 
 class NeuralModel:
     def __init__(self, cuda=True):
@@ -43,14 +46,12 @@ class NeuralModel:
             outputs = self.model(**inputs, output_hidden_states=True)
             predictions = outputs[0].cpu().numpy()
             # Return only last layer states of the [CLS] token for now.
-            output_state = outputs[1][-2][0, 0].cpu().numpy()
+            output_state = torch.cat([outputs[1][-i][0, 0] for i in range(N_LAYER)]).cpu().numpy()
+            # output_state = outputs[1][-2][0, 0].cpu().numpy()
         # This converts the prediction (logits) to probability (sum to 1)
         # prob_negative,prob_positive
         scores = np.exp(predictions) / np.exp(predictions).sum(-1, keepdims=True)
         return scores, output_state
-
-
-DIM = 768
 
 
 class DeepxploreCoverage:
@@ -70,7 +71,7 @@ class DeepxploreCoverage:
         return self.cov_map.sum()
 
 class NearestNeighborCoverage:
-    def __init__(self, threshold=8):
+    def __init__(self, threshold=10):
         self.cov_map = np.zeros((0, DIM))
         self.threshold = threshold
 
@@ -205,10 +206,10 @@ def run_experiment(model, cov_metrics, guided, label):
             dataset.append(line) 
 
     metamorphic_tester = MetamorphicTester(model, cov_metrics, dataset)
-    cov_incs, fail_test_list = metamorphic_tester.run_search(guided=guided)
-
+    cov_incs, fail_test_list, pid_count = metamorphic_tester.run_search(guided=guided)
     with Path('tmp/results.txt').open("a") as f:
         f.write("\n===========\n")
+        f.write("Usage of each perturbation " + str(pid_count) + '\n')
         f.write("Num of failures " + str(len(fail_test_list)) + '\n')
         f.write(json.dumps(fail_test_list, indent=4))
     return pd.DataFrame(dict(time=list(range(len(cov_incs))), value=cov_incs, Guide=label))
@@ -231,7 +232,7 @@ def draw_comparison(nsample=1, coverage_type=0):
     plt.savefig('tmp/cov.png', dpi=300, bbox_inches='tight')
 
 if __name__ == "__main__":
-    draw_comparison(nsample=5)
+    draw_comparison(nsample=1, coverage_type=2)
 
     # model = NeuralModel()
     # cov_metrics = DeepxploreCoverage()
