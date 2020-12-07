@@ -20,18 +20,24 @@ class MetamorphicTester:
             MetamorphicGenerator.Perturb_change_number,
             MetamorphicGenerator.Perturb_punctuation,
             MetamorphicGenerator.Perturb_change_gender,
+            MetamorphicGenerator.Perturb_change_neutral_word,
             MetamorphicGenerator.Perturb_add_irrelevant_phrase,
             # MetamorphicGenerator.Perturb_add_negation,
-            MetamorphicGenerator.Perturb_add_negation_phrase
+            MetamorphicGenerator.Perturb_add_negation_phrase,
+            MetamorphicGenerator.Perturb_add_positive_phrase,
         ]
         self.pnum = len(self.plist)
 
     def get_perturbation(self, sent, pid):
         dataset = [sent]
-        if pid not in [0, 7]:
+        if pid not in [0, len(self.plist)-1]:
             dataset = list(self.nlp.pipe(dataset))
         pert_sent = self.plist[pid](dataset)
-        expectation = 'INV' if pid < 7 else 'MONO_DEC'
+        if pid == len(self.plist)-2:
+            expectation = 'MONO_DEC'  
+        elif pid == len(self.plist)-1:
+            expectation = 'MONO_INC'  
+        else: expectation ='INV'
         return pert_sent, expectation
     
     def run_search(self, guided=False):
@@ -58,7 +64,7 @@ class MetamorphicTester:
             if len(pqueue) > 0:
                 pid = pqueue.pop(0)
             else:
-                pid = random.randint(1, 7)
+                pid = random.randint(1, len(self.plist)-1)
 
 
             # print(sent, pid)
@@ -130,9 +136,10 @@ class MetamorphicTester:
             result = 1 if sentiment[0] != sentiment[1] else 0  # fail
 
         elif expect_bahavior == "MONO_DEC":  # prediction should change
-            # p7 sentiment = sentiment of new,old pair: [new, old, new, old]
-            # sentiment at even index i should not be less than i+1
             # pass if all pairs' is mono decreasing
             result = 0 if sentiment[0] < sentiment[1] else 1
+        elif expect_bahavior == "MONO_INC":  
+            # pass if all pairs' is mono increasing
+            result = 0 if sentiment[0] > sentiment[1] else 1
         
         return result, cov_inc

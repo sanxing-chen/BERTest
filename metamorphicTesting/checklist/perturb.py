@@ -596,17 +596,18 @@ class Perturb:
 
         #change pronounce if availble
         gender_map = {
-            "he": "she", "she": "he", "him": "her","her": "him" ,"his":"her","men":"women","man":"woman","women":"men","woman":"man"
+            "he": "she", "she": "he", "him": "her","her": "him" ,"his":"her","men":"women","man":"woman","women":"men","woman":"man",
+            "himself":"herself", "herself":"himself"
         }
         pron = [x.text.lower() for x in doc if (x.text.lower() in gender_map)]
         ret = []
         ret_m = []
-        for x in pron:
-            sub_re = re.compile(r'\b%s\b' % x)
-            opp_gender = str(gender_map.get(pron[0]))
-            to_sub = [str(gender_map.get(p)) for p in pron]
-            ret.extend([sub_re.sub(n, doc.text,re.IGNORECASE) for n in to_sub])
-            ret_m.extend([(x, n) for n in to_sub])
+        
+        if (len(pron)>0):
+            sub_re = re.compile(r'\b%s\b' % pron[0])
+            to_sub = [str(gender_map.get(pron[0]))]
+            ret.extend([sub_re.sub(to_sub[0], doc.text,re.IGNORECASE)])
+            ret_m.extend([(pron[0], to_sub[0])])
 
         # change name if available
         ents = [x.text for x in doc.ents if np.all([a.ent_type_ == 'PERSON' for a in x])]
@@ -640,4 +641,24 @@ class Perturb:
             for y in to_use:
                 ret.append(re.sub(r'\b%s\b' % re.escape(f), y, doc.text))
                 ret_m.append((f, y))
+        return process_ret(ret, ret_m=ret_m, n=n, meta=meta)
+
+    @staticmethod
+    def change_neutral_word(doc, meta=False, n=1, first_only=False, last_only=False, seed=None):
+        """
+        changing neutral words
+        """
+        # neutral_word = ["the","one","a","an","that","this"]
+
+        neutral_word_map = {
+            "the": "a", "a": "one", "an": "one","one": "a" ,"this":"that","that":"this","these":"those","those":"this"
+        }
+        pron = [x.text.lower() for x in doc if (x.text.lower() in neutral_word_map)]
+        ret = []
+        ret_m = []
+        if (len(pron)>0):
+            sub_re = re.compile(r'\b%s\b' % pron[0])
+            to_sub = [str(neutral_word_map.get(pron[0]))]
+            ret.extend([sub_re.sub(to_sub[0], doc.text,re.IGNORECASE)])
+            ret_m.extend([(pron[0], to_sub[0])])
         return process_ret(ret, ret_m=ret_m, n=n, meta=meta)

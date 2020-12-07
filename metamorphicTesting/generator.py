@@ -46,7 +46,7 @@ class MetamorphicGenerator:
     @staticmethod
     def Perturb_add_negation_phrase(dataset):
         def add_negative_phrase(x):
-            phrases = [ 'Having said this, I hated it', 'Anyway, I thought it was bad.', 'I do not like this', 'Bad!','Not good!']
+            phrases = [ 'Having said this, I hated it.', 'Anyway, I thought it was bad.', 'I do not like this.', 'Bad!','Not good!']
             rand = random.randint(0, 4)
             return ['%s %s' % (x, phrases[rand])]
         return Perturb.perturb(dataset, add_negative_phrase)
@@ -82,3 +82,16 @@ class MetamorphicGenerator:
 
         return Perturb.perturb(dataset, add_irrelevant)
 
+
+    @staticmethod
+    def Perturb_add_positive_phrase(dataset):
+        def add_positive_phrase(x):
+            phrases = [ 'Having said this, I love it.','Nice!','Excellent.','This is amazing.']
+            rand = random.randint(0, 3)
+            return ['%s %s' % (x, phrases[rand])]
+        return Perturb.perturb(dataset, add_positive_phrase)
+
+
+    @staticmethod
+    def Perturb_change_neutral_word(pdataset):
+        return Perturb.perturb(pdataset, Perturb.change_neutral_word)
