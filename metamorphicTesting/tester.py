@@ -19,6 +19,7 @@ class MetamorphicTester:
             MetamorphicGenerator.Perturb_change_location,
             MetamorphicGenerator.Perturb_change_number,
             MetamorphicGenerator.Perturb_punctuation,
+            MetamorphicGenerator.Perturb_change_gender,
             # MetamorphicGenerator.Perturb_add_negation,
             MetamorphicGenerator.Perturb_add_negation_phrase
         ]
@@ -26,10 +27,10 @@ class MetamorphicTester:
 
     def get_perturbation(self, sent, pid):
         dataset = [sent]
-        if pid not in [0, 5]:
+        if pid not in [0, 6]:
             dataset = list(self.nlp.pipe(dataset))
         pert_sent = self.plist[pid](dataset)
-        expectation = 'INV' if pid < 5 else 'MONO_DEC'
+        expectation = 'INV' if pid < 6 else 'MONO_DEC'
         return pert_sent, expectation
     
     def run_search(self, guided=False):
@@ -52,7 +53,7 @@ class MetamorphicTester:
             if len(pqueue) > 0:
                 pid = pqueue.pop(0)
             else:
-                pid = random.randint(1, 5)
+                pid = random.randint(1, 6)
             sent = sents.pop(0)
             # print(sent, pid)
             perturb, expect_bahavior = self.get_perturbation(sent, pid)

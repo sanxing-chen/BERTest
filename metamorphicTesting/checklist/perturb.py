@@ -443,7 +443,7 @@ class Perturb:
         return reverse_contraction_pattern.sub(cont, sentence)
 
     @staticmethod
-    def change_names(doc, meta=False, n=10, first_only=False, last_only=False, seed=None):
+    def change_names(doc, meta=False, n=1, first_only=False, last_only=False, seed=None):
         """Replace names with other names
 
         Parameters
@@ -506,7 +506,7 @@ class Perturb:
         return process_ret(ret, ret_m=ret_m, n=n, meta=meta)
 
     @staticmethod
-    def change_location(doc, meta=False, seed=None, n=10):
+    def change_location(doc, meta=False, seed=None, n=1):
         """Change city and country names
 
         Parameters
@@ -546,7 +546,7 @@ class Perturb:
         return process_ret(ret, ret_m=ret_m, n=n, meta=meta)
 
     @staticmethod
-    def change_number(doc, meta=False, seed=None, n=10):
+    def change_number(doc, meta=False, seed=None, n=1):
         """Change integers to other integers within 20% of the original integer
         Does not change '2' or '4' to avoid abbreviations (this is 4 you, etc)
 
@@ -586,4 +586,58 @@ class Perturb:
             to_sub = ['%s' % str(int(x) + t) for t in to_sub if str(int(x) + t) != x][:n]
             ret.extend([sub_re.sub(n, doc.text) for n in to_sub])
             ret_m.extend([(x, n) for n in to_sub])
+        return process_ret(ret, ret_m=ret_m, n=n, meta=meta)
+
+
+    @staticmethod
+    def change_gender(doc, meta=False, n=1, first_only=False, last_only=False, seed=None):
+        if seed is not None:
+            np.random.seed(seed)
+
+        #change pronounce if availble
+        gender_map = {
+            "he": "she", "she": "he", "him": "her","her": "him" ,"his":"her","men":"women","man":"woman","women":"men","woman":"man"
+        }
+        pron = [x.text.lower() for x in doc if (x.text.lower() in gender_map)]
+        ret = []
+        ret_m = []
+        for x in pron:
+            sub_re = re.compile(r'\b%s\b' % x)
+            opp_gender = str(gender_map.get(pron[0]))
+            to_sub = [str(gender_map.get(p)) for p in pron]
+            ret.extend([sub_re.sub(n, doc.text,re.IGNORECASE) for n in to_sub])
+            ret_m.extend([(x, n) for n in to_sub])
+
+        # change name if available
+        ents = [x.text for x in doc.ents if np.all([a.ent_type_ == 'PERSON' for a in x])]
+        for x in ents:
+            f = x.split()[0]
+            sex = None
+            if f.capitalize() in Perturb.data['name_set']['women']:
+                sex = 'men'
+            if f.capitalize() in Perturb.data['name_set']['men']:
+                sex = 'women'
+            if not sex:
+                continue
+            if len(x.split()) > 1:
+                l = x.split()[1]
+                if len(l) > 2 and l.capitalize() not in Perturb.data['name_set']['last']:
+                    continue
+            else:
+                if last_only:
+                    return None
+            names = Perturb.data['name'][sex][:90+n]
+            to_use = np.random.choice(names, n)
+            if not first_only:
+                f = x
+                if len(x.split()) > 1:
+                    last = Perturb.data['name']['last'][:90+n]
+                    last = np.random.choice(last, n)
+                    to_use = ['%s %s' % (x, y) for x, y in zip(names, last)]
+                    if last_only:
+                        to_use = last
+                        f = x.split()[1]
+            for y in to_use:
+                ret.append(re.sub(r'\b%s\b' % re.escape(f), y, doc.text))
+                ret_m.append((f, y))
         return process_ret(ret, ret_m=ret_m, n=n, meta=meta)

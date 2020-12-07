@@ -50,3 +50,7 @@ class MetamorphicGenerator:
             rand = random.randint(0, 4)
             return ['%s %s' % (x, phrases[rand])]
         return Perturb.perturb(dataset, add_negative_phrase)
+
+    @staticmethod
+    def Perturb_change_gender(pdataset):
+        return Perturb.perturb(pdataset, Perturb.change_gender)
