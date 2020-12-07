@@ -43,7 +43,7 @@ class MetamorphicTester:
         cov_incs.append(init_cov)
 
         pqueue = []
-        max_tries = 150
+        max_tries = 300
         num_failure = 0
         fail_test_list = []
         while(len(cov_incs) < max_tries):
@@ -52,7 +52,7 @@ class MetamorphicTester:
             if len(pqueue) > 0:
                 pid = pqueue.pop(0)
             else:
-                pid = random.randint(0, 5)
+                pid = random.randint(1, 5)
             sent = sents.pop(0)
             # print(sent, pid)
             perturb, expect_bahavior = self.get_perturbation(sent, pid)
@@ -66,12 +66,18 @@ class MetamorphicTester:
             assert cov_inc[0] == 0
             if guided:
                 if cov_inc[1]:
+                    # If coverage increase, add the original sentence back to the pool,
+                    # because it is suspicious
                     sents.append(sent)
-                    sents.append(perturb.data[0][1])
                     pqueue.append(pid)
+                    # If the oracle has not been broken, add the perturb sentence to the pool
+                    # If it's broken, the oracle won't hold any further
+                    if len(fail_test) == 0:
+                        sents.append(perturb.data[0][1])
             else:
                 sents.append(sent)
-                sents.append(perturb.data[0][1])
+                if len(fail_test) == 0:
+                    sents.append(perturb.data[0][1])
         for i in range(1, len(cov_incs)):
             cov_incs[i] += cov_incs[i - 1]
         print("num_failure", num_failure)
@@ -82,6 +88,8 @@ class MetamorphicTester:
         fail_test = []
         all_cov_inc = []
         for test_pair in perturb.data:
+            # Ensure there is only one test pair
+            test_pair = test_pair[:2]
             result, cov_inc = self.oracle_test(test_pair, expect_bahavior)
             if result == 0:
                 fail_test.append(test_pair)
@@ -93,9 +101,6 @@ class MetamorphicTester:
     def oracle_test(self, test_pair, expect_bahavior):
         sentiment = []
         cov_inc = []
-
-        # Ensure there is only one test pair
-        test_pair = test_pair[:2]
 
         for sentence in test_pair:
             pred, output_state = self.model.run_example(sentence)
