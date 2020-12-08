@@ -575,7 +575,7 @@ class Perturb:
         ret_m = []
         for x in nums:
             # e.g. this is 4 you
-            if x == '2' or x == '4':
+            if x == '2' or x == '4' or x == '180':
                 continue
             sub_re = re.compile(r'\b%s\b' % x)
             try:

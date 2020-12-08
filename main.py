@@ -190,6 +190,9 @@ def simple_perturb_test(metamorphic_tester):
     print("---------------metamorphic relation 7: add negation phrase------------------")
     metamorphic_tester.run_perturbation(p7, "MONO_DEC")
 
+all_pid_count = []
+all_pid_count_failure = []
+
 def run_experiment(model, cov_metrics, guided, label):
     # Read the data from the SST-2 dataset
     # base = Path('SST-2')
@@ -206,10 +209,14 @@ def run_experiment(model, cov_metrics, guided, label):
             dataset.append(line) 
 
     metamorphic_tester = MetamorphicTester(model, cov_metrics, dataset)
-    cov_incs, fail_test_list, pid_count = metamorphic_tester.run_search(guided=guided)
+    cov_incs, fail_test_list, pid_count, pid_count_failure = metamorphic_tester.run_search(guided=guided)
+    all_pid_count.append(pid_count)
+    all_pid_count_failure.append(pid_count_failure)
     with Path('tmp/results.txt').open("a") as f:
         f.write("\n===========\n")
-        f.write("Usage of each perturbation " + str(pid_count) + '\n')
+        f.write("Guided " + str(guided) + '\n')
+        f.write("Usage of each perturbation type " + str(pid_count) + '\n')
+        f.write("Failures caused by each perturbation type " + str(pid_count_failure) + '\n')
         f.write("Num of failures " + str(len(fail_test_list)) + '\n')
         f.write(json.dumps(fail_test_list, indent=4))
     return pd.DataFrame(dict(time=list(range(len(cov_incs))), value=cov_incs, Guide=label))
@@ -227,12 +234,21 @@ def draw_comparison(nsample=1, coverage_type=0):
         cov_metrics = coverage_fn()
         df = df.append(run_experiment(model, cov_metrics, False, "None"), ignore_index=True)
 
+    with Path('tmp/results.txt').open("a") as f:
+        f.write("\n======Guided by " + coverage_name + "======\n")
+        f.write("Usage of each perturbation type " + str(np.asarray(all_pid_count)[::2].sum(axis=0).tolist()) + '\n')
+        f.write("Failures caused by each perturbation type " + str(np.asarray(all_pid_count_failure)[::2].sum(axis=0).tolist()) + '\n')
+        f.write("\n======Unguided======\n")
+        f.write("Usage of each perturbation type " + str(np.asarray(all_pid_count)[1::2].sum(axis=0).tolist()) + '\n')
+        f.write("Failures caused by each perturbation type " + str(np.asarray(all_pid_count_failure)[1::2].sum(axis=0).tolist()) + '\n')
+
+
     ax = sns.relplot(x="time", y="value", hue="Guide", kind="line", data=df)
     ax.set(xlabel='#Tests', ylabel='#Covered Neurons')
     plt.savefig('tmp/cov.png', dpi=300, bbox_inches='tight')
 
 if __name__ == "__main__":
-    draw_comparison(nsample=1, coverage_type=2)
+    draw_comparison(nsample=2, coverage_type=2)
 
     # model = NeuralModel()
     # cov_metrics = DeepxploreCoverage()

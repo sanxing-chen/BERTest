@@ -56,6 +56,7 @@ class MetamorphicTester:
         num_failure = 0
         fail_test_list = []
         pid_count = [0] * len(self.plist)
+        pid_count_failure = [0] * len(self.plist)
         while(len(cov_incs) < MAX_TRIES):
             if len(sents) == 0:
                 sents += [(s, 0) for s in self.seeds]
@@ -66,7 +67,6 @@ class MetamorphicTester:
             else:
                 pid = random.randint(1, len(self.plist)-1)
 
-
             # print(sent, pid)
             pid_count[pid] += 1
             perturb, expect_bahavior = self.get_perturbation(sent, pid)
@@ -74,8 +74,9 @@ class MetamorphicTester:
                 continue
             fail_test, cov_inc = self.run_perturbation(perturb, expect_bahavior)
             if len(fail_test) > 0:
-                fail_test_list += fail_test
+                fail_test_list.append([self.plist[pid].__name__, *fail_test])
                 num_failure += 1
+                pid_count_failure[pid] += 1
             cov_incs.append(cov_inc[1])
             assert cov_inc[0] == 0
             if guided:
@@ -95,19 +96,18 @@ class MetamorphicTester:
         for i in range(1, len(cov_incs)):
             cov_incs[i] += cov_incs[i - 1]
         print(guided, "num_failure", num_failure)
-        return cov_incs, fail_test_list, pid_count
+        return cov_incs, fail_test_list, pid_count, pid_count_failure
 
     # return sentences pair that failed
     def run_perturbation(self, perturb, expect_bahavior):
         fail_test = []
         all_cov_inc = []
-        for test_pair in perturb.data:
-            # Ensure there is only one test pair
-            test_pair = test_pair[:2]
-            result, cov_inc = self.oracle_test(test_pair, expect_bahavior)
-            if result == 0:
-                fail_test.append(test_pair)
-            all_cov_inc.extend(cov_inc)
+        # Ensure there is only one test pair
+        test_pair = perturb.data[0][:2]
+        result, cov_inc = self.oracle_test(test_pair, expect_bahavior)
+        if result == 0:
+            fail_test += test_pair
+        all_cov_inc.extend(cov_inc)
         return fail_test, all_cov_inc
 
     # Check if the test pass or fail based on expected behavior
