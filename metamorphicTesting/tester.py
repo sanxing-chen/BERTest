@@ -95,7 +95,7 @@ class MetamorphicTester:
                     sents.append((perturb.data[0][1], n_perturb + 1))
         for i in range(1, len(cov_incs)):
             cov_incs[i] += cov_incs[i - 1]
-        print(guided, "num_failure", num_failure)
+        print("Guided" if guided else "Unguided", "num_failure", num_failure)
         return cov_incs, fail_test_list, pid_count, pid_count_failure
 
     # return sentences pair that failed

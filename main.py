@@ -21,7 +21,7 @@ import pandas as pd
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 MODEL = 'distilbert-base-uncased-finetuned-sst-2-english'
 
-N_LAYER = 3
+N_LAYER = 6
 DIM = 768 * N_LAYER
 
 class NeuralModel:
@@ -60,7 +60,7 @@ class DeepxploreCoverage:
         self.threshold = threshold
 
     def get_cov_inc(self, new_states: np.ndarray, add_inc_to_cov=False):
-        example_cov = np.absolute(new_states) > self.threshold
+        example_cov = new_states > self.threshold
         new_cov_map = np.logical_or(self.cov_map, example_cov)
         cov_inc = new_cov_map.sum() - self.cov_map.sum()
         if add_inc_to_cov:
@@ -71,7 +71,7 @@ class DeepxploreCoverage:
         return self.cov_map.sum()
 
 class NearestNeighborCoverage:
-    def __init__(self, threshold=10):
+    def __init__(self, threshold=4.5):
         self.cov_map = np.zeros((0, DIM))
         self.threshold = threshold
 
@@ -247,8 +247,10 @@ def draw_comparison(nsample=1, coverage_type=0):
     for i in range(nsample):
         cov_metrics = coverage_fn()
         df = df.append(run_experiment(model, cov_metrics, True, coverage_name), ignore_index=True)
+        print('Final coverage', cov_metrics.get_current())
         cov_metrics = coverage_fn()
         df = df.append(run_experiment(model, cov_metrics, False, "None"), ignore_index=True)
+        print('Final coverage', cov_metrics.get_current())
 
     with Path('tmp/results.txt').open("a") as f:
         f.write("\n======Guided by " + coverage_name + "======\n")
@@ -258,13 +260,13 @@ def draw_comparison(nsample=1, coverage_type=0):
         f.write("Usage of each perturbation type " + str(np.asarray(all_pid_count)[1::2].sum(axis=0).tolist()) + '\n')
         f.write("Failures caused by each perturbation type " + str(np.asarray(all_pid_count_failure)[1::2].sum(axis=0).tolist()) + '\n')
 
-    df.to_csv('tmp/cov.csv')
+    df.to_csv(f'tmp/{coverage_name}.csv')
     ax = sns.relplot(x="time", y="value", hue="Guide", kind="line", data=df)
-    ax.set(xlabel='#Tests', ylabel='#Covered Neurons')
-    plt.savefig('tmp/cov.png', dpi=300, bbox_inches='tight')
+    ax.set(xlabel='#Tests', ylabel='#Coverage')
+    plt.savefig(f'tmp/{coverage_name}.png', dpi=300, bbox_inches='tight')
 
 if __name__ == "__main__":
-    draw_comparison(nsample=2, coverage_type=2)
+    draw_comparison(nsample=1, coverage_type=2)
 
     # model = NeuralModel()
     # cov_metrics = DeepxploreCoverage()
