@@ -94,20 +94,36 @@ class NearestNeighborCoverage:
         return self.cov_map.shape[0]
 
 class DeepgaugeCoverage:
-    def __init__(self, threshold=1.0):
-        self.cov_map = np.zeros((DIM,), dtype=np.bool)
-        self.threshold = threshold
+    def __init__(self, n_section=5, low=-2.0, high=1.0):
+        self.cov_map = np.zeros((n_section + 2, DIM), dtype=np.bool)
+        self.n_section = n_section
+        self.low = low
+        self.high = high
 
     def get_cov_inc(self, new_states: np.ndarray, add_inc_to_cov=False):
-        example_cov = np.absolute(new_states) > self.threshold
-        new_cov_map = np.logical_or(self.cov_map, example_cov)
-        cov_inc = new_cov_map.sum() - self.cov_map.sum()
+        # print(new_states.min(), new_states.max(), new_states.mean())
+        # exit()
+        low = self.low
+        inc = (self.high - self.low) / self.n_section
+        high = inc + low
+        new_cov_map = np.zeros_like(self.cov_map)
+        for i in range(self.n_section):
+            example_cov = (new_states >= low) & (new_states < high)
+            new_cov_map[i] = np.logical_or(self.cov_map[i], example_cov)
+            low += inc
+            high += inc
+        example_cov = new_states < low
+        new_cov_map[self.n_section] = np.logical_or(self.cov_map[self.n_section], example_cov)
+        example_cov = new_states >= high
+        new_cov_map[self.n_section + 1] = np.logical_or(self.cov_map[self.n_section + 1], example_cov)
+
+        cov_inc = new_cov_map.mean(axis=0).sum() - self.cov_map.mean(axis=0).sum()
         if add_inc_to_cov:
             self.cov_map = new_cov_map
         return cov_inc
     
     def get_current(self):
-        return self.cov_map.sum()
+        return self.cov_map.mean(axis=0).sum()
 
 def simple_cov_test(model, cov_metrics):
     test_sent = "We are very happy to include pipeline into the transformers repository."
@@ -225,7 +241,7 @@ def draw_comparison(nsample=1, coverage_type=0):
     model = NeuralModel()
 
     coverage_fn = [DeepxploreCoverage, DeepgaugeCoverage, NearestNeighborCoverage][coverage_type]
-    coverage_name = ['Deepxplore', 'Deepgauge', 'NearestNeighbor'][coverage_type]
+    coverage_name = ['Deepxplore', 'DeepGauge', 'NearestNeighbor'][coverage_type]
 
     df = pd.DataFrame()
     for i in range(nsample):
@@ -242,7 +258,7 @@ def draw_comparison(nsample=1, coverage_type=0):
         f.write("Usage of each perturbation type " + str(np.asarray(all_pid_count)[1::2].sum(axis=0).tolist()) + '\n')
         f.write("Failures caused by each perturbation type " + str(np.asarray(all_pid_count_failure)[1::2].sum(axis=0).tolist()) + '\n')
 
-
+    df.to_csv('tmp/cov.csv')
     ax = sns.relplot(x="time", y="value", hue="Guide", kind="line", data=df)
     ax.set(xlabel='#Tests', ylabel='#Covered Neurons')
     plt.savefig('tmp/cov.png', dpi=300, bbox_inches='tight')
