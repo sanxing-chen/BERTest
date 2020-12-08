@@ -1,0 +1,1183 @@
+
+===========
+Guided True
+Usage of each perturbation type [0, 145, 100, 92, 129, 107, 92, 104, 133, 194]
+Failures caused by each perturbation type [0, 1, 0, 0, 2, 2, 1, 6, 0, 0]
+Num of failures 12
+[
+    [
+        "Perturb_change_names",
+        "Schmaltzy and unfunny , Adam Sandler 's cartoon about Hanukkah is numbingly bad , Little Nicky bad , 10 Worst List bad . This is amazing.",
+        "Schmaltzy and unfunny , Michael Myers cartoon about Hanukkah is numbingly bad , Little Nicky bad , 10 Worst List bad . This is amazing."
+    ],
+    [
+        "Perturb_change_gender",
+        "Shunji Iwai 's All About Lily Chou Chou is a beautifully shot , but ultimately flawed film about growing up in Japan . Having said this, I love it.",
+        "Shunji Iwai 's All About Michael Reed is a beautifully shot , but ultimately flawed film about growing up in Japan . Having said this, I love it."
+    ],
+    [
+        "Perturb_punctuation",
+        "Formula 51 is so trite that even Yu 's high-energy action stylings ca n't break through the stupor . This is amazing.",
+        "Formula 51 is so trite that even Yu 's high-energy action stylings ca n't break through the stupor . This is amazing"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "This follow-up seems so similar to the 2103 Disney classic that it makes one long for a geriatric Peter . Nice!",
+        "OK. This follow-up seems so similar to the 2103 Disney classic that it makes one long for a geriatric Peter . Nice!"
+    ],
+    [
+        "Perturb_punctuation",
+        "How on earth , or anywhere else , did director Ron Underwood manage to blow $ 100 million on this ? Nice!",
+        "How on earth , or anywhere else , did director Ron Underwood manage to blow $ 100 million on this ? Nice"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Co-writer\\/director Jonathan Parker 's attempts to fashion a Brazil-like , hyper-real satire fall dreadfully short . Nice!",
+        "Yeah. Co-writer\\/director Jonathan Parker 's attempts to fashion a Brazil-like , hyper-real satire fall dreadfully short . Nice!"
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "-LRB- City -RRB- reminds us how realistically nuanced a Michael Gray performance can be when he is not more lucratively engaged in the shameless self-caricature of ` Analyze This ' -LRB- 1999 -RRB- and ` Analyze That , ' promised -LRB- or threatened -RRB- for later this year . Having said this, I hated it.",
+        "-LRB- City -RRB- reminds us how realistically nuanced one Michael Gray performance can be when he is not more lucratively engaged in the shameless self-caricature of ` Analyze This ' -LRB- 1999 -RRB- and ` Analyze That , ' promised -LRB- or threatened -RRB- for later this year . Having said this, I hated it."
+    ],
+    [
+        "Perturb_change_gender",
+        "Hollywood Ending is the most disappointing Woody Allen movie ever . Nice! This is amazing.",
+        "Hollywood Ending is the most disappointing Jennifer Reyes movie ever . Nice! This is amazing."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Hollywood has taken quite a nosedive from Alfred Hitchcock 's imaginative flight to Shyamalan 's self-important summer fluff . Nice! I do not like this.",
+        "OK. Hollywood has taken quite a nosedive from Alfred Hitchcock 's imaginative flight to Shyamalan 's self-important summer fluff . Nice! I do not like this."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Woody Allen used to ridicule movies like Hollywood Ending",
+        "OK. Woody Allen used to ridicule movies like Hollywood Ending"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "If you think that Jennifer Kelly has shown poor judgment in planning to marry Ben Affleck , wait till you see Maid in Manhattan .",
+        "OK. If you think that Jennifer Kelly has shown poor judgment in planning to marry Ben Affleck , wait till you see Maid in Manhattan ."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Michael Hughes used to ridicule movies like Hollywood Ending .",
+        "Yeah. Michael Hughes used to ridicule movies like Hollywood Ending ."
+    ]
+]
+===========
+Guided False
+Usage of each perturbation type [0, 115, 123, 139, 126, 142, 134, 125, 112, 135]
+Failures caused by each perturbation type [0, 0, 0, 0, 1, 1, 1, 3, 0, 0]
+Num of failures 6
+[
+    [
+        "Perturb_add_irrelevant_phrase",
+        "How on earth , or anywhere else , did director Ron Underwood manage to blow $ 100 million on that",
+        "OK. How on earth , or anywhere else , did director Ron Underwood manage to blow $ 100 million on that"
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "Yup. Huppert 's show to steal and she makes a meal of it , channeling Michael White creepy turn as the repressed mother on Boston Public just as much as 8 Women 's Augustine .",
+        "Yup. Huppert 's show to steal and she makes one meal of it , channeling Michael White creepy turn as the repressed mother on Boston Public just as much as 8 Women 's Augustine ."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "The most brilliant work in this genre since the 1984 uncut version of Sergio Leone 's flawed but staggering Once Upon a Time in America . Bad",
+        "I mean. The most brilliant work in this genre since the 1984 uncut version of Sergio Leone 's flawed but staggering Once Upon a Time in America . Bad"
+    ],
+    [
+        "Perturb_change_gender",
+        "It 's as if Allen , at 66 , has stopped challenging himself . Excellent.",
+        "It 's as if Monica , at 66 , has stopped challenging himself . Excellent."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "I mean. Mostly Martha could have used a little trimming -- 10 or 15 minutes could be cut and no one would notice -- but it 's a pleasurable trifle . Having said this, I hated it.",
+        "Yup. I mean. Mostly Martha could have used a little trimming -- 10 or 15 minutes could be cut and no one would notice -- but it 's a pleasurable trifle . Having said this, I hated it."
+    ],
+    [
+        "Perturb_punctuation",
+        "A chilling tale of one of the great crimes of 20th Century France : the murder of two rich women by their servants in 1933 . Having said this, I hated it. Not good!",
+        "A chilling tale of one of the great crimes of 20th Century France : the murder of two rich women by their servants in 1933 . Having said this, I hated it. Not good"
+    ]
+]
+===========
+Guided True
+Usage of each perturbation type [0, 149, 123, 88, 129, 108, 93, 129, 134, 173]
+Failures caused by each perturbation type [0, 2, 1, 0, 2, 2, 0, 6, 0, 0]
+Num of failures 13
+[
+    [
+        "Perturb_change_gender",
+        "Shunji Iwai 's All About Lily Chou Chou is a beautifully shot , but ultimately flawed film about growing up in Japan . Having said this, I love it.",
+        "Shunji Iwai 's All About Michael Clark is a beautifully shot , but ultimately flawed film about growing up in Japan . Having said this, I love it."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "The cameo-packed , M : I-2-spoofing title sequence is the funniest 5 minutes to date in this spy comedy franchise ... Then Mike Myers shows up and ruins everything . Nice!",
+        "I mean. The cameo-packed , M : I-2-spoofing title sequence is the funniest 5 minutes to date in this spy comedy franchise ... Then Mike Myers shows up and ruins everything . Nice!"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Woody Allen used to ridicule movies like Hollywood Ending",
+        "Yeah. Woody Allen used to ridicule movies like Hollywood Ending"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Director Jay Russell stomps in hobnail boots over Natalie Babbitt 's gentle , endearing 1975 children 's novel . Having said this, I love it.",
+        "Yeah. Director Jay Russell stomps in hobnail boots over Natalie Babbitt 's gentle , endearing 1975 children 's novel . Having said this, I love it."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Yup. Woody Allen used to ridicule movies like Hollywood Ending .",
+        "Yeah. Yup. Woody Allen used to ridicule movies like Hollywood Ending ."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Woody Allen used to ridicule movies like Hollywood Ending .",
+        "OK. Woody Allen used to ridicule movies like Hollywood Ending ."
+    ],
+    [
+        "Perturb_change_names",
+        "The most brilliant work in this genre since the 1984 uncut version of Sergio Leone 's flawed but staggering Once Upon a Time in America . Bad!",
+        "The most brilliant work in this genre since the 1984 uncut version of Michael Torres flawed but staggering Once Upon a Time in America . Bad!"
+    ],
+    [
+        "Perturb_change_gender",
+        "The most brilliant work in this genre since the 1984 uncut version of Sergio Leone 's flawed but staggering Once Upon a Time in America . Bad!",
+        "The most brilliant work in this genre since the 1984 uncut version of Jennifer Gonzalez flawed but staggering Once Upon a Time in America . Bad!"
+    ],
+    [
+        "Perturb_change_names",
+        "Yeah. A small fortune in salaries and stunt cars might have been saved if the director , Tom Dey , had spliced together bits and pieces of Midnight Run and 48 Hours -LRB- and , for that matter , Shrek -RRB- . Excellent.",
+        "Yeah. A small fortune in salaries and stunt cars might have been saved if the director , Michael Mitchell , had spliced together bits and pieces of Midnight Run and 48 Hours -LRB- and , for that matter , Shrek -RRB- . Excellent."
+    ],
+    [
+        "Perturb_punctuation",
+        "It 's as if Allen , at 66 , has stopped challenging himself . Having said this, I love it.",
+        "It 's as if Allen , at 66 , has stopped challenging himself . Having said this, I love it"
+    ],
+    [
+        "Perturb_punctuation",
+        "It 's as if Chad , at 66 , has stopped challenging himself . Having said this, I love it.",
+        "It 's as if Chad , at 66 , has stopped challenging himself . Having said this, I love it"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Though filmed partly in Canada , Paid in Full has clever ways of capturing inner-city life during the Ava years . Not good!",
+        "Yeah. Though filmed partly in Canada , Paid in Full has clever ways of capturing inner-city life during the Ava years . Not good!"
+    ],
+    [
+        "Perturb_change_location",
+        "OK. The film 's implicit premise is that the faith of the Tonga people is in every way inferior to that of John",
+        "OK. The film 's implicit premise is that the faith of the United Kingdom people is in every way inferior to that of John"
+    ]
+]
+===========
+Guided False
+Usage of each perturbation type [0, 117, 127, 119, 123, 141, 138, 120, 126, 144]
+Failures caused by each perturbation type [0, 0, 0, 1, 1, 1, 1, 5, 0, 0]
+Num of failures 9
+[
+    [
+        "Perturb_add_irrelevant_phrase",
+        "focuses on Melanie 's raging hormones and sledgehammers the audience with Spanish inquisitions about her `` madness '' so much that I became mad that I wasted 123 minutes and $ 9.50 on this 21st century torture device . Nice!",
+        "Yup. focuses on Melanie 's raging hormones and sledgehammers the audience with Spanish inquisitions about her `` madness '' so much that I became mad that I wasted 123 minutes and $ 9.50 on this 21st century torture device . Nice!"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "For the first time in several years , Mr. Allen has surpassed himself with the magic he 's spun with the Hollywood empress of Ms. Leoni 's Andrew . Having said this, I hated it.",
+        "I mean. For the first time in several years , Mr. Allen has surpassed himself with the magic he 's spun with the Hollywood empress of Ms. Leoni 's Andrew . Having said this, I hated it."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "focuses on Joan 's raging hormones and sledgehammers the audience with Spanish inquisitions about her `` madness '' so much that I became mad that I wasted 123 minutes and $ 9.50 on this 21st century torture device . Nice!",
+        "Yup. focuses on Joan 's raging hormones and sledgehammers the audience with Spanish inquisitions about her `` madness '' so much that I became mad that I wasted 123 minutes and $ 9.50 on this 21st century torture device . Nice!"
+    ],
+    [
+        "Perturb_punctuation",
+        "Yeah. Woody Allen used to ridicule movies like Baton Rouge Ending .",
+        "Yeah. Woody Allen used to ridicule movies like Baton Rouge Ending"
+    ],
+    [
+        "Perturb_change_number",
+        "Set in a 1986 Harlem that does n't look much like anywhere in New York . Excellent.",
+        "Set in a 1888 Harlem that does n't look much like anywhere in New York . Excellent."
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "Huppert 's show to steal and she makes a meal of it , channeling Jennifer Anderson creepy turn as the repressed mother on Baltimore Public just as much as 8 Women 's Augustine .",
+        "Huppert 's show to steal and she makes one meal of it , channeling Jennifer Anderson creepy turn as the repressed mother on Baltimore Public just as much as 8 Women 's Augustine ."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Though filmed partly in Morocco , Paid in Full has clever ways of capturing inner-city life during the Reagan years . Anyway, I thought it was bad.",
+        "Yup. Though filmed partly in Morocco , Paid in Full has clever ways of capturing inner-city life during the Reagan years . Anyway, I thought it was bad."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "focuses on Joan 's raging hormones and sledgehammers a audience with Spanish inquisitions about her `` madness '' so much that I became mad that I wasted 123 minutes and $ 9.50 on this 21st century torture device . Nice!",
+        "OK. focuses on Joan 's raging hormones and sledgehammers a audience with Spanish inquisitions about her `` madness '' so much that I became mad that I wasted 123 minutes and $ 9.50 on this 21st century torture device . Nice!"
+    ],
+    [
+        "Perturb_change_gender",
+        "OK. Even the imaginative gore ca n't hide the musty scent of Todd Farmer 's screenplay , which is a simple retread of the 1979 Alien , with a plucky heroine battling a monster loose in a spaceship",
+        "OK. Even the imaginative gore ca n't hide the musty scent of Jennifer Parker screenplay , which is a simple retread of the 1979 Alien , with a plucky heroine battling a monster loose in a spaceship"
+    ]
+]
+===========
+Guided True
+Usage of each perturbation type [0, 127, 117, 82, 111, 135, 76, 140, 138, 167]
+Failures caused by each perturbation type [0, 3, 0, 1, 0, 0, 2, 3, 0, 0]
+Num of failures 9
+[
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Though filmed partly in Canada , Paid in Full has clever ways of capturing inner-city life during the Reagan years . Anyway, I thought it was bad.",
+        "I mean. Though filmed partly in Canada , Paid in Full has clever ways of capturing inner-city life during the Reagan years . Anyway, I thought it was bad."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Though filmed partly in Canada , Paid in Full has clever ways of capturing inner-city life during the Adrian years . Anyway, I thought it was bad.",
+        "Yeah. Though filmed partly in Canada , Paid in Full has clever ways of capturing inner-city life during the Adrian years . Anyway, I thought it was bad."
+    ],
+    [
+        "Perturb_change_names",
+        "Yup. It is so refreshing to see Robin Williams turn 180 degrees from the string of insultingly innocuous and sappy fiascoes he 's been making for the last several years . I do not like this.",
+        "Yup. It is so refreshing to see Jennifer Thompson turn 180 degrees from the string of insultingly innocuous and sappy fiascoes he 's been making for the last several years . I do not like this."
+    ],
+    [
+        "Perturb_change_names",
+        "With amazing finesse , the film shadows Heidi 's trip back to Vietnam and the city where her mother , Mai Thi Kim , still lives . Having said this, I hated it. Anyway, I thought it was bad.",
+        "With amazing finesse , the film shadows Brooke 's trip back to Vietnam and the city where her mother , Mai Thi Kim , still lives . Having said this, I hated it. Anyway, I thought it was bad."
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "If cinema had been around to capture the chaos of France in the 1790 's , one imagines the result would look like something like this . I do not like this.",
+        "If cinema had been around to capture a chaos of France in a 1790 's , one imagines the result would look like something like this . I do not like this."
+    ],
+    [
+        "Perturb_change_number",
+        "If cinema had been around to capture the chaos of Peru in the 1790 's , one imagines the result would look like something like this . I do not like this.",
+        "If cinema had been around to capture the chaos of Peru in the 1899 's , one imagines the result would look like something like this . I do not like this."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "... a low rate Annie featuring some kid who ca n't act , only echoes of Ghana , and weirdo actor Crispin Glover screwing things up old school . Having said this, I love it.",
+        "I mean. ... a low rate Annie featuring some kid who ca n't act , only echoes of Ghana , and weirdo actor Crispin Glover screwing things up old school . Having said this, I love it."
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "OK. The film 's implicit premise is that the faith of the Tonga people is in every way inferior to that of Christian .",
+        "OK. The film 's implicit premise is that a faith of a Tonga people is in every way inferior to that of Christian ."
+    ],
+    [
+        "Perturb_change_names",
+        "It 's as if Allen , at 66 , has stopped challenging himself . Bad! Having said this, I love it.",
+        "It 's as if Peter , at 66 , has stopped challenging himself . Bad! Having said this, I love it."
+    ]
+]
+===========
+Guided False
+Usage of each perturbation type [0, 130, 122, 149, 128, 113, 108, 135, 128, 142]
+Failures caused by each perturbation type [0, 0, 1, 0, 1, 0, 0, 3, 0, 0]
+Num of failures 5
+[
+    [
+        "Perturb_change_location",
+        "Despite a performance of sustained intelligence from Stanford and another of subtle humour from Bebe Neuwirth , as an older woman who seduces Oscar , the film founders on its lack of empathy for the social milieu - rich New York intelligentsia - and its off Having said this, I love it.",
+        "Despite a performance of sustained intelligence from Stanford and another of subtle humour from Bebe Neuwirth , as an older woman who seduces Oscar , the film founders on its lack of empathy for the social milieu - rich Lexington-Fayette intelligentsia - and its off Having said this, I love it."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Hollywood Ending is the most disappointing Woody Allen movie ever . This is amazing.",
+        "I mean. Hollywood Ending is the most disappointing Woody Allen movie ever . This is amazing."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Hollywood has taken quite a nosedive from Alfred Hitchcock 's imaginative flight to Shyamalan 's self-important summer fluff . Nice!",
+        "Yup. Hollywood has taken quite a nosedive from Alfred Hitchcock 's imaginative flight to Shyamalan 's self-important summer fluff . Nice!"
+    ],
+    [
+        "Perturb_punctuation",
+        "OK. The film 's needlessly opaque intro takes its doe-eyed Crudup out of pre-9 \\/ 11 New York and onto a cross-country road trip of the Homeric kind . Having said this, I love it.",
+        "OK. The film 's needlessly opaque intro takes its doe-eyed Crudup out of pre-9 \\/ 11 New York and onto a cross-country road trip of the Homeric kind . Having said this, I love it"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "The cameo-packed , M : I-2-spoofing title sequence is the funniest 5 minutes to date in this spy comedy franchise ... Then Mike Myers shows up and ruins everything . Nice!",
+        "Yup. The cameo-packed , M : I-2-spoofing title sequence is the funniest 5 minutes to date in this spy comedy franchise ... Then Mike Myers shows up and ruins everything . Nice!"
+    ]
+]
+===========
+Guided True
+Usage of each perturbation type [0, 155, 101, 94, 112, 156, 86, 109, 138, 168]
+Failures caused by each perturbation type [0, 1, 2, 0, 2, 1, 1, 7, 0, 0]
+Num of failures 14
+[
+    [
+        "Perturb_change_names",
+        "Though it 's equally solipsistic in tone , the movie has enough vitality to justify the notion of creating a screen adaptation of Evans ' saga of Hollywood excess . Anyway, I thought it was bad.",
+        "Though it 's equally solipsistic in tone , the movie has enough vitality to justify the notion of creating a screen adaptation of Dustin ' saga of Hollywood excess . Anyway, I thought it was bad."
+    ],
+    [
+        "Perturb_punctuation",
+        "The most brilliant and brutal UK crime film since Jack Carter went back to Newcastle , the first half of Gangster No. 1 drips with style and , at times , blood . Bad!",
+        "The most brilliant and brutal UK crime film since Jack Carter went back to Newcastle , the first half of Gangster No. 1 drips with style and , at times , blood . Bad"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Woody Allen used to ridicule movies like Hollywood Ending .",
+        "OK. Woody Allen used to ridicule movies like Hollywood Ending ."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Michael Morgan used to ridicule movies like Hollywood Ending .",
+        "OK. Michael Morgan used to ridicule movies like Hollywood Ending ."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "It is so refreshing to see Jennifer Turner turn 180 degrees from the string of insultingly innocuous and sappy fiascoes he 's been making for the last several years . I do not like this.",
+        "I mean. It is so refreshing to see Jennifer Turner turn 180 degrees from the string of insultingly innocuous and sappy fiascoes he 's been making for the last several years . I do not like this."
+    ],
+    [
+        "Perturb_punctuation",
+        "Though it 's equally solipsistic in tone , the movie has enough vitality to justify the notion of creating a screen adaptation of Evans ' saga of Hollywood excess . Anyway, I thought it was bad.",
+        "Though it 's equally solipsistic in tone , the movie has enough vitality to justify the notion of creating a screen adaptation of Evans ' saga of Hollywood excess . Anyway, I thought it was bad"
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "Hollywood Ending is the most disappointing Woody Allen movie ever . This is amazing. Nice!",
+        "Hollywood Ending is a most disappointing Woody Allen movie ever . This is amazing. Nice!"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Even the imaginative gore ca n't hide the musty scent of Todd Farmer 's screenplay , which is a simple retread of the 1979 Alien , with a plucky heroine battling a monster loose in a spaceship . Nice!",
+        "Yeah. Even the imaginative gore ca n't hide the musty scent of Todd Farmer 's screenplay , which is a simple retread of the 1979 Alien , with a plucky heroine battling a monster loose in a spaceship . Nice!"
+    ],
+    [
+        "Perturb_change_location",
+        "Shunji Iwai 's All About Lily Chou Chou is a beautifully shot , but ultimately flawed film about growing up in Japan . Excellent.",
+        "Shunji Iwai 's All About Lily Chou Chou is a beautifully shot , but ultimately flawed film about growing up in Russian Federation . Excellent."
+    ],
+    [
+        "Perturb_change_location",
+        "Shunji Iwai 's All About Michael Hernandez is a beautifully shot , but ultimately flawed film about growing up in Japan . Excellent.",
+        "Shunji Iwai 's All About Michael Hernandez is a beautifully shot , but ultimately flawed film about growing up in Nepal . Excellent."
+    ],
+    [
+        "Perturb_change_gender",
+        "The most brilliant work in this genre since the 1984 uncut version of Sergio Leone 's flawed but staggering Once Upon a Time in America . Having said this, I hated it.",
+        "The most brilliant work in this genre since the 1984 uncut version of Jennifer Thompson flawed but staggering Once Upon a Time in America . Having said this, I hated it."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "If The Tuxedo actually were a suit , it would fit Isabella like a $ 99 bargain-basement special . Nice!",
+        "OK. If The Tuxedo actually were a suit , it would fit Isabella like a $ 99 bargain-basement special . Nice!"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "The film 's implicit premise is that a faith of a Tonga people is in every way inferior to that of Isaiah .",
+        "OK. The film 's implicit premise is that a faith of a Tonga people is in every way inferior to that of Isaiah ."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "The film 's implicit premise is that a faith of a Tonga people is in every way inferior to that of John .",
+        "OK. The film 's implicit premise is that a faith of a Tonga people is in every way inferior to that of John ."
+    ]
+]
+===========
+Guided False
+Usage of each perturbation type [0, 155, 125, 131, 116, 120, 121, 119, 136, 123]
+Failures caused by each perturbation type [0, 0, 1, 0, 3, 0, 1, 2, 0, 0]
+Num of failures 7
+[
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Even the imaginative gore ca n't hide the musty scent of Todd Farmer 's screenplay , which is a simple retread of the 1603 Alien , with a plucky heroine battling a monster loose in a spaceship .",
+        "OK. Even the imaginative gore ca n't hide the musty scent of Todd Farmer 's screenplay , which is a simple retread of the 1603 Alien , with a plucky heroine battling a monster loose in a spaceship ."
+    ],
+    [
+        "Perturb_punctuation",
+        "It is so refreshing to see Robin Williams turn 180 degrees from the string of insultingly innocuous and sappy fiascoes he 's been making for the last several years . Anyway, I thought it was bad.",
+        "It is so refreshing to see Robin Williams turn 180 degrees from the string of insultingly innocuous and sappy fiascoes he 's been making for the last several years . Anyway, I thought it was bad"
+    ],
+    [
+        "Perturb_change_location",
+        "Huppert 's show to steal and she makes a meal of it , channeling Kathy Baker 's creepy turn as the repressed mother on Boston Public just as much as 8 Women 's Augustine . Anyway, I thought it was bad.",
+        "Huppert 's show to steal and she makes a meal of it , channeling Kathy Baker 's creepy turn as the repressed mother on El Paso Public just as much as 8 Women 's Augustine . Anyway, I thought it was bad."
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "It 's no surprise that as a director Washington demands and receives excellent performances , from himself and from newcomer Derek Luke Not good!",
+        "It 's no surprise this as a director Washington demands and receives excellent performances , from himself and from newcomer Derek Luke Not good!"
+    ],
+    [
+        "Perturb_punctuation",
+        "It is so refreshing to see Robin Williams turn 180 degrees from the string of insultingly innocuous and sappy fiascoes he 's been making for the last several years . Anyway, I thought it was bad.",
+        "It is so refreshing to see Robin Williams turn 180 degrees from the string of insultingly innocuous and sappy fiascoes he 's been making for the last several years . Anyway, I thought it was bad"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Would be an unendurable viewing experience for this ultra-provincial New Yorker if 26-year-old Reese Witherspoon were not on hand to inject her pure fantasy character , Melanie Carmichael , with a massive infusion of old-fashioned Hollywood magic Bad!",
+        "OK. Would be an unendurable viewing experience for this ultra-provincial New Yorker if 26-year-old Reese Witherspoon were not on hand to inject her pure fantasy character , Melanie Carmichael , with a massive infusion of old-fashioned Hollywood magic Bad!"
+    ],
+    [
+        "Perturb_punctuation",
+        "The film 's implicit premise is that the faith of the Tonga people is in every way inferior to that of Alyssa . Excellent.",
+        "The film 's implicit premise is that the faith of the Tonga people is in every way inferior to that of Alyssa . Excellent"
+    ]
+]
+===========
+Guided True
+Usage of each perturbation type [0, 131, 80, 78, 111, 134, 108, 132, 162, 160]
+Failures caused by each perturbation type [0, 3, 0, 0, 3, 1, 0, 5, 0, 1]
+Num of failures 13
+[
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Woody Allen used to ridicule movies like Hollywood Ending .",
+        "OK. Woody Allen used to ridicule movies like Hollywood Ending ."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Peter .",
+        "OK. This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Peter ."
+    ],
+    [
+        "Perturb_punctuation",
+        "How on earth , or anywhere else , did director Jennifer Collins manage to blow $ 100 million on this ? Nice!",
+        "How on earth , or anywhere else , did director Jennifer Collins manage to blow $ 100 million on this ? Nice"
+    ],
+    [
+        "Perturb_punctuation",
+        "With an unusual protagonist -LRB- a kilt-wearing Jackson -RRB- and subject matter , the improbable `` Formula 51 '' is somewhat entertaining , but it could have been much stronger . Having said this, I hated it.",
+        "With an unusual protagonist -LRB- a kilt-wearing Jackson -RRB- and subject matter , the improbable `` Formula 51 '' is somewhat entertaining , but it could have been much stronger . Having said this, I hated it"
+    ],
+    [
+        "Perturb_add_positive_phrase",
+        "The film 's needlessly opaque intro takes its doe-eyed Crudup out of pre-9 \\/ 11 New York and onto a cross-country road trip of the Homeric kind . Excellent. Nice!",
+        "The film 's needlessly opaque intro takes its doe-eyed Crudup out of pre-9 \\/ 11 New York and onto a cross-country road trip of the Homeric kind . Excellent. Nice! Nice!"
+    ],
+    [
+        "Perturb_change_names",
+        "The most brilliant work in this genre since the 1984 uncut version of Sergio Leone 's flawed but staggering Once Upon a Time in America Bad!",
+        "The most brilliant work in this genre since the 1984 uncut version of Michael Roberts flawed but staggering Once Upon a Time in America Bad!"
+    ],
+    [
+        "Perturb_change_names",
+        "The film 's implicit premise is that a faith of a Tonga people is in every way inferior to that of John . Excellent.",
+        "The film 's implicit premise is that a faith of a Tonga people is in every way inferior to that of Luke . Excellent."
+    ],
+    [
+        "Perturb_punctuation",
+        "How on earth , or anywhere else , did director Jennifer Collins manage to blow $ 100 million on this ? Nice!",
+        "How on earth , or anywhere else , did director Jennifer Collins manage to blow $ 100 million on this ? Nice"
+    ],
+    [
+        "Perturb_change_gender",
+        "The film 's implicit premise is that the faith of the Tonga people is in every way inferior to that of John . Excellent.",
+        "The film 's implicit premise is that the faith of the Tonga people is in every way inferior to that of Victoria . Excellent."
+    ],
+    [
+        "Perturb_change_names",
+        "The film 's implicit premise is that the faith of the Tonga people is in every way inferior to that of John . Excellent.",
+        "The film 's implicit premise is that the faith of the Tonga people is in every way inferior to that of Ryan . Excellent."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Woody Allen used to ridicule movies like Hollywood Ending .",
+        "OK. Woody Allen used to ridicule movies like Hollywood Ending ."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "If The Tuxedo actually were a suit , it would fit Chan like a $ 99 bargain-basement special . Excellent.",
+        "OK. If The Tuxedo actually were a suit , it would fit Chan like a $ 99 bargain-basement special . Excellent."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "If The Tuxedo actually were a suit , it would fit Chan like a $ 99 bargain-basement special . Excellent.",
+        "I mean. If The Tuxedo actually were a suit , it would fit Chan like a $ 99 bargain-basement special . Excellent."
+    ]
+]
+===========
+Guided False
+Usage of each perturbation type [0, 117, 137, 120, 122, 142, 116, 132, 116, 132]
+Failures caused by each perturbation type [0, 0, 0, 0, 5, 1, 0, 6, 2, 0]
+Num of failures 14
+[
+    [
+        "Perturb_add_irrelevant_phrase",
+        "focuses on Joan 's raging hormones and sledgehammers the audience with Spanish inquisitions about her `` madness '' so much that I became mad that I wasted 123 minutes and $ 9.50 on this 21st century torture device .",
+        "OK. focuses on Joan 's raging hormones and sledgehammers the audience with Spanish inquisitions about her `` madness '' so much that I became mad that I wasted 123 minutes and $ 9.50 on this 21st century torture device ."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Woody Allen used to ridicule movies like Durham Ending .",
+        "OK. Woody Allen used to ridicule movies like Durham Ending ."
+    ],
+    [
+        "Perturb_change_gender",
+        "Huppert 's show to steal and she makes one meal of it , channeling Kathy Baker 's creepy turn as the repressed mother on Boston Public just as much as 8 Women 's Augustine .",
+        "Huppert 's show to steal and she makes one meal of it , channeling Michael Jackson creepy turn as the repressed mother on Boston Public just as much as 8 Women 's Augustine ."
+    ],
+    [
+        "Perturb_punctuation",
+        "I can imagine this movie as a b & w British comedy , circa 1960 , with Peter Sellers , Kenneth Williams , et al. , but at this time , with this cast , this movie is hopeless . Excellent. Having said this, I love it.",
+        "I can imagine this movie as a b & w British comedy , circa 1960 , with Peter Sellers , Kenneth Williams , et al. , but at this time , with this cast , this movie is hopeless . Excellent. Having said this, I love it"
+    ],
+    [
+        "Perturb_punctuation",
+        "Cineasts will revel in those visual in-jokes , as in the film 's verbal pokes at everything from the likes of Miramax chief Harvey Weinstein 's bluff personal style to the stylistic rigors of Denmark 's Dogma movement . Bad!",
+        "Cineasts will revel in those visual in-jokes , as in the film 's verbal pokes at everything from the likes of Miramax chief Harvey Weinstein 's bluff personal style to the stylistic rigors of Denmark 's Dogma movement . Bad"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "A chilling tale of one of the great crimes of 20th Century France : the murder of two rich women by their servants in 1933 Anyway, I thought it was bad.",
+        "OK. A chilling tale of one of the great crimes of 20th Century France : the murder of two rich women by their servants in 1933 Anyway, I thought it was bad."
+    ],
+    [
+        "Perturb_add_negation_phrase",
+        "Mel Gibson fights the good fight in Vietnam in director Randall Wallace 's flag-waving war flick with a core of decency . Not good",
+        "Mel Gibson fights the good fight in Vietnam in director Randall Wallace 's flag-waving war flick with a core of decency . Not good Bad!"
+    ],
+    [
+        "Perturb_add_negation_phrase",
+        "Mel Gibson fights the good fight in Vietnam in director Randall Wallace 's flag-waving war flick with a core of decency . Not good",
+        "Mel Gibson fights the good fight in Vietnam in director Randall Wallace 's flag-waving war flick with a core of decency . Not good Bad!"
+    ],
+    [
+        "Perturb_punctuation",
+        "It is so refreshing to see Robin Williams turn 180 degrees from a string of insultingly innocuous and sappy fiascoes he 's been making for a last several years . Not good!",
+        "It is so refreshing to see Robin Williams turn 180 degrees from a string of insultingly innocuous and sappy fiascoes he 's been making for a last several years . Not good"
+    ],
+    [
+        "Perturb_punctuation",
+        "Cineasts will revel in those visual in-jokes , as in the film 's verbal pokes at everything from the likes of Miramax chief Harvey Weinstein 's bluff personal style to the stylistic rigors of Denmark 's Dogma movement . Bad!",
+        "Cineasts will revel in those visual in-jokes , as in the film 's verbal pokes at everything from the likes of Miramax chief Harvey Weinstein 's bluff personal style to the stylistic rigors of Denmark 's Dogma movement . Bad"
+    ],
+    [
+        "Perturb_punctuation",
+        "A chilling tale of one of the great crimes of 20th Century France : the murder of two rich women by their servants in 1933 Anyway, I thought it was bad.",
+        "A chilling tale of one of the great crimes of 20th Century France : the murder of two rich women by their servants in 1933 Anyway, I thought it was bad"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "The cameo-packed , M : I-2-spoofing title sequence is the funniest 5 minutes to date in this spy comedy franchise ... Then Mike Myers shows up and ruins everything Nice!",
+        "Yup. The cameo-packed , M : I-2-spoofing title sequence is the funniest 5 minutes to date in this spy comedy franchise ... Then Mike Myers shows up and ruins everything Nice!"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "An admitted egomaniac , Evans is no Los Angeles villain , and yet this grating showcase almost makes you wish he 'd gone the way of Don Simpson . Nice!",
+        "OK. An admitted egomaniac , Evans is no Los Angeles villain , and yet this grating showcase almost makes you wish he 'd gone the way of Don Simpson . Nice!"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "The film 's implicit premise is that the faith of the Tonga people is in every way inferior to that of Avery . Excellent.",
+        "Yup. The film 's implicit premise is that the faith of the Tonga people is in every way inferior to that of Avery . Excellent."
+    ]
+]
+===========
+Guided True
+Usage of each perturbation type [0, 134, 119, 76, 111, 129, 90, 137, 151, 163]
+Failures caused by each perturbation type [0, 2, 1, 0, 2, 1, 2, 1, 0, 0]
+Num of failures 9
+[
+    [
+        "Perturb_punctuation",
+        "Shunji Iwai 's All About Lily Chou Chou is a beautifully shot , but ultimately flawed film about growing up in Japan . Excellent.",
+        "Shunji Iwai 's All About Lily Chou Chou is a beautifully shot , but ultimately flawed film about growing up in Japan . Excellent"
+    ],
+    [
+        "Perturb_change_names",
+        "Co-writer\\/director Jonathan Parker 's attempts to fashion a Brazil-like , hyper-real satire fall dreadfully short . Excellent",
+        "Co-writer\\/director Michael Phillips attempts to fashion a Brazil-like , hyper-real satire fall dreadfully short . Excellent"
+    ],
+    [
+        "Perturb_change_location",
+        "Set in a 1986 Harlem that does n't look much like anywhere in New York . Excellent.",
+        "Set in a 1986 Harlem that does n't look much like anywhere in Fort Worth . Excellent."
+    ],
+    [
+        "Perturb_change_gender",
+        "Formula 51 is so trite that even Yu 's high-energy action stylings ca n't break through the stupor . This is amazing. Having said this, I hated it.",
+        "Formula 51 is so trite that even Grace 's high-energy action stylings ca n't break through the stupor . This is amazing. Having said this, I hated it."
+    ],
+    [
+        "Perturb_punctuation",
+        "Set in a 1986 Harlem that does n't look much like anywhere in New York . Nice!",
+        "Set in a 1986 Harlem that does n't look much like anywhere in New York . Nice"
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "OK. The film 's implicit premise is that the faith of the Tonga people is in every way inferior to that of John .",
+        "OK. The film 's implicit premise is that a faith of a Tonga people is in every way inferior to that of John ."
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "OK. The film 's implicit premise is that the faith of the Bangladesh people is in every way inferior to that of John .",
+        "OK. The film 's implicit premise is that a faith of a Bangladesh people is in every way inferior to that of John ."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Set in a 1986 Harlem that does n't look much like anywhere in New York . Nice!",
+        "Yup. Set in a 1986 Harlem that does n't look much like anywhere in New York . Nice!"
+    ],
+    [
+        "Perturb_change_names",
+        "focuses on Joan 's raging hormones and sledgehammers the audience with Spanish inquisitions about her `` madness '' so much that I became mad that I wasted 123 minutes and $ 9.50 on this 21st century torture device . Excellent.",
+        "focuses on Christine 's raging hormones and sledgehammers the audience with Spanish inquisitions about her `` madness '' so much that I became mad that I wasted 123 minutes and $ 9.50 on this 21st century torture device . Excellent."
+    ]
+]
+===========
+Guided False
+Usage of each perturbation type [0, 134, 131, 115, 137, 127, 117, 114, 128, 134]
+Failures caused by each perturbation type [0, 2, 0, 0, 0, 2, 5, 0, 0, 0]
+Num of failures 9
+[
+    [
+        "Perturb_change_neutral_word",
+        "Though it 's equally solipsistic in tone , the movie has enough vitality to justify the notion of creating a screen adaptation of Evans ' saga of Hollywood excess . Anyway, I thought it was bad.",
+        "Though it 's equally solipsistic in tone , a movie has enough vitality to justify a notion of creating a screen adaptation of Evans ' saga of Hollywood excess . Anyway, I thought it was bad."
+    ],
+    [
+        "Perturb_change_names",
+        "Sitting in the third row of the IMAX cinema at Sydney 's Darling Harbour , but I sometimes felt as though I was in the tiny two seater plane that carried the giant camera around Turkey , sweeping and gliding , banking and hovering over some of the most not Nice!",
+        "Sitting in the third row of the IMAX cinema at Sydney 's Jennifer Morales , but I sometimes felt as though I was in the tiny two seater plane that carried the giant camera around Turkey , sweeping and gliding , banking and hovering over some of the most not Nice!"
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "Though it 's equally solipsistic in tone , the movie has enough vitality to justify the notion of creating a screen adaptation of Evans ' saga of Hollywood excess . Anyway, I thought it was bad.",
+        "Though it 's equally solipsistic in tone , a movie has enough vitality to justify a notion of creating a screen adaptation of Evans ' saga of Hollywood excess . Anyway, I thought it was bad."
+    ],
+    [
+        "Perturb_change_gender",
+        "OK. If you think that Jennifer Lopez has shown poor judgment in planning to marry Ben Affleck , wait till you see Maid in Manhattan .",
+        "OK. If you think that Michael Thomas has shown poor judgment in planning to marry Ben Affleck , wait till you see Maid in Manhattan ."
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "It tends to remind a of a really solid Woody Allen film , with its excellent use of New York locales and sharp writing Bad!",
+        "It tends to remind one of one really solid Woody Allen film , with its excellent use of New York locales and sharp writing Bad!"
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "Though it 's equally solipsistic in tone , the movie has enough vitality to justify the notion of creating a screen adaptation of Evans ' saga of Hollywood excess . Anyway, I thought it was bad.",
+        "Though it 's equally solipsistic in tone , a movie has enough vitality to justify a notion of creating a screen adaptation of Evans ' saga of Hollywood excess . Anyway, I thought it was bad."
+    ],
+    [
+        "Perturb_change_names",
+        "Huppert 's show to steal and she makes one meal of it , channeling Kathy Baker 's creepy turn as the repressed mother on Boston Public just as much as 8 Women 's Augustine .",
+        "Huppert 's show to steal and she makes one meal of it , channeling Jennifer Wilson creepy turn as the repressed mother on Boston Public just as much as 8 Women 's Augustine ."
+    ],
+    [
+        "Perturb_change_gender",
+        "The most brilliant work in this genre since a 1984 uncut version of Sergio Leone 's flawed but staggering Once Upon a Time in America . Having said this, I hated it.",
+        "The most brilliant work in this genre since a 1984 uncut version of Jennifer Myers flawed but staggering Once Upon a Time in America . Having said this, I hated it."
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "Though it 's equally solipsistic in tone , the movie has enough vitality to justify the notion of creating a screen adaptation of Evans ' saga of Hollywood excess . Anyway, I thought it was bad.",
+        "Though it 's equally solipsistic in tone , a movie has enough vitality to justify a notion of creating a screen adaptation of Evans ' saga of Hollywood excess . Anyway, I thought it was bad."
+    ]
+]
+===========
+Guided True
+Usage of each perturbation type [0, 117, 125, 111, 125, 116, 98, 153, 135, 158]
+Failures caused by each perturbation type [0, 0, 0, 0, 2, 1, 1, 5, 0, 0]
+Num of failures 9
+[
+    [
+        "Perturb_punctuation",
+        "San Bernardino has taken quite a nosedive from Alfred Hitchcock 's imaginative flight to Shyamalan 's self-important summer fluff . Having said this, I love it.",
+        "San Bernardino has taken quite a nosedive from Alfred Hitchcock 's imaginative flight to Shyamalan 's self-important summer fluff . Having said this, I love it"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Well , Jason 's gone to Manhattan and Hell , I guess a space station in the year 2455 can be crossed off the list of ideas for the inevitable future sequels -LRB- hey , do n't shoot the messenger -RRB- . Excellent. Bad!",
+        "OK. Well , Jason 's gone to Manhattan and Hell , I guess a space station in the year 2455 can be crossed off the list of ideas for the inevitable future sequels -LRB- hey , do n't shoot the messenger -RRB- . Excellent. Bad!"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Peter . Nice!",
+        "Yeah. This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Peter . Nice!"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Peter . Nice",
+        "I mean. This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Peter . Nice"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Hollywood Ending is the most disappointing Woody Allen movie ever . This is amazing.",
+        "Yup. Hollywood Ending is the most disappointing Woody Allen movie ever . This is amazing."
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "I mean. Mostly Martha could have used a little trimming -- 10 or 15 minutes could be cut and no one would notice -- but it 's a pleasurable trifle . I do not like this.",
+        "I mean. Mostly Martha could have used one little trimming -- 10 or 15 minutes could be cut and no one would notice -- but it 's one pleasurable trifle . I do not like this."
+    ],
+    [
+        "Perturb_change_gender",
+        "This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Peter . Nice",
+        "This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Emily . Nice"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "I mean. Mostly Martha could have used a little trimming -- 10 or 15 minutes could be cut and no one would notice -- but it 's a pleasurable trifle . I do not like this.",
+        "Yeah. I mean. Mostly Martha could have used a little trimming -- 10 or 15 minutes could be cut and no one would notice -- but it 's a pleasurable trifle . I do not like this."
+    ],
+    [
+        "Perturb_punctuation",
+        "Shunji Iwai 's All About Lily Chou Chou is one beautifully shot , but ultimately flawed film about growing up in Japan . This is amazing.",
+        "Shunji Iwai 's All About Lily Chou Chou is one beautifully shot , but ultimately flawed film about growing up in Japan . This is amazing"
+    ]
+]
+===========
+Guided False
+Usage of each perturbation type [0, 141, 122, 129, 131, 142, 131, 135, 115, 116]
+Failures caused by each perturbation type [0, 0, 0, 0, 3, 0, 0, 2, 0, 0]
+Num of failures 5
+[
+    [
+        "Perturb_punctuation",
+        "I can imagine this movie as a b & w British comedy , circa 1960 , with Peter Sellers , Kenneth Williams , et al. , but at this time , with this cast , this movie is hopeless Excellent.",
+        "I can imagine this movie as a b & w British comedy , circa 1960 , with Peter Sellers , Kenneth Williams , et al. , but at this time , with this cast , this movie is hopeless Excellent"
+    ],
+    [
+        "Perturb_punctuation",
+        "Director Tom Dey demonstrated a knack for mixing action and idiosyncratic humor in his charming 2000 debut Shanghai Noon , but Showtime 's uninspired send-up of TV cop show cliches mostly leaves him shooting blanks Excellent.",
+        "Director Tom Dey demonstrated a knack for mixing action and idiosyncratic humor in his charming 2000 debut Shanghai Noon , but Showtime 's uninspired send-up of TV cop show cliches mostly leaves him shooting blanks Excellent"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "An admitted egomaniac , Evans is no Hollywood villain , and yet this grating showcase almost makes you wish he 'd gone the way of Jennifer Martinez . Nice!",
+        "OK. An admitted egomaniac , Evans is no Hollywood villain , and yet this grating showcase almost makes you wish he 'd gone the way of Jennifer Martinez . Nice!"
+    ],
+    [
+        "Perturb_punctuation",
+        "Hollywood has taken quite a nosedive from Alfred Hitchcock 's imaginative flight to Shyamalan 's self-important summer fluff . Having said this, I love it.",
+        "Hollywood has taken quite a nosedive from Alfred Hitchcock 's imaginative flight to Shyamalan 's self-important summer fluff . Having said this, I love it"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "An animation landmark as monumental as Disney 's 1937 breakthrough Michael Stewart and the Seven Dwarfs . I do not like this.",
+        "Yup. An animation landmark as monumental as Disney 's 1937 breakthrough Michael Stewart and the Seven Dwarfs . I do not like this."
+    ]
+]
+===========
+Guided True
+Usage of each perturbation type [0, 125, 150, 76, 94, 145, 83, 122, 162, 145]
+Failures caused by each perturbation type [0, 1, 1, 0, 2, 1, 2, 6, 0, 0]
+Num of failures 13
+[
+    [
+        "Perturb_punctuation",
+        "Cineasts will revel in those visual in-jokes , as in the film 's verbal pokes at everything from the likes of Miramax chief Harvey Weinstein 's bluff personal style to the stylistic rigors of Denmark 's Dogma movement . Bad!",
+        "Cineasts will revel in those visual in-jokes , as in the film 's verbal pokes at everything from the likes of Miramax chief Harvey Weinstein 's bluff personal style to the stylistic rigors of Denmark 's Dogma movement . Bad"
+    ],
+    [
+        "Perturb_punctuation",
+        "An admitted egomaniac , Evans is no Hollywood villain , and yet this grating showcase almost makes you wish he 'd gone the way of Don Simpson . Having said this, I love it.",
+        "An admitted egomaniac , Evans is no Hollywood villain , and yet this grating showcase almost makes you wish he 'd gone the way of Don Simpson . Having said this, I love it"
+    ],
+    [
+        "Perturb_change_gender",
+        "Shunji Iwai 's All About Lily Chou Chou is a beautifully shot , but ultimately flawed film about growing up in Japan . Having said this, I love it.",
+        "Shunji Iwai 's All About Michael Mitchell is a beautifully shot , but ultimately flawed film about growing up in Japan . Having said this, I love it."
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "If cinema had been around to capture the chaos of Japan in the 1790 's , one imagines the result would look like something like this . I do not like this.",
+        "If cinema had been around to capture a chaos of Japan in a 1790 's , one imagines the result would look like something like this . I do not like this."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Hollywood has taken quite a nosedive from Alfred Hitchcock 's imaginative flight to Shyamalan 's self-important summer fluff . Nice",
+        "I mean. Hollywood has taken quite a nosedive from Alfred Hitchcock 's imaginative flight to Shyamalan 's self-important summer fluff . Nice"
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "If cinema had been around to capture the chaos of France in the 1790 's , one imagines the result would look like something like this . I do not like this.",
+        "If cinema had been around to capture a chaos of France in a 1790 's , one imagines the result would look like something like this . I do not like this."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "How on earth , or anywhere else , did director Jennifer Foster manage to blow $ 100 million on that ?",
+        "OK. How on earth , or anywhere else , did director Jennifer Foster manage to blow $ 100 million on that ?"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Hollywood has taken quite a nosedive from Alfred Hitchcock 's imaginative flight to Shyamalan 's self-important summer fluff . Nice",
+        "OK. Hollywood has taken quite a nosedive from Alfred Hitchcock 's imaginative flight to Shyamalan 's self-important summer fluff . Nice"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Sitting in the third row of the IMAX cinema at Sydney 's Darling Harbour , but I sometimes felt as though I was in the tiny two seater plane that carried the giant camera around Australia , sweeping and gliding , banking and hovering over some of the most not Having said this, I hated it. Bad!",
+        "I mean. Sitting in the third row of the IMAX cinema at Sydney 's Darling Harbour , but I sometimes felt as though I was in the tiny two seater plane that carried the giant camera around Australia , sweeping and gliding , banking and hovering over some of the most not Having said this, I hated it. Bad!"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "OK. If you think that Jennifer Lopez has shown poor judgment in planning to marry Ben Affleck , wait till you see Maid in Manhattan .",
+        "OK. OK. If you think that Jennifer Lopez has shown poor judgment in planning to marry Ben Affleck , wait till you see Maid in Manhattan ."
+    ],
+    [
+        "Perturb_change_location",
+        "-LRB- Shawn 's -RRB- been making piffle for a long while , and Hollywood Ending may be his way of saying that piffle is all that the airhead movie business deserves from him right now . Nice!",
+        "-LRB- Shawn 's -RRB- been making piffle for a long while , and Kansas City Ending may be his way of saying that piffle is all that the airhead movie business deserves from him right now . Nice!"
+    ],
+    [
+        "Perturb_change_names",
+        "OK. If you think that Jennifer Lopez has shown poor judgment in planning to marry Ben Affleck , wait till you see Maid in Manhattan",
+        "OK. If you think that Jennifer Roberts has shown poor judgment in planning to marry Ben Affleck , wait till you see Maid in Manhattan"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "If The Tuxedo actually were a suit , it would fit Chan like a $ 99 bargain-basement special . Nice! Excellent.",
+        "Yup. If The Tuxedo actually were a suit , it would fit Chan like a $ 99 bargain-basement special . Nice! Excellent."
+    ]
+]
+===========
+Guided False
+Usage of each perturbation type [0, 136, 139, 118, 122, 112, 123, 134, 119, 133]
+Failures caused by each perturbation type [0, 1, 1, 1, 3, 0, 3, 3, 0, 0]
+Num of failures 12
+[
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Even the imaginative gore ca n't hide the musty scent of Michael Anderson screenplay , which is a simple retread of the 1979 Alien , with a plucky heroine battling a monster loose in a spaceship .",
+        "OK. Even the imaginative gore ca n't hide the musty scent of Michael Anderson screenplay , which is a simple retread of the 1979 Alien , with a plucky heroine battling a monster loose in a spaceship ."
+    ],
+    [
+        "Perturb_change_names",
+        "Though it 's equally solipsistic in tone , the movie has enough vitality to justify the notion of creating a screen adaptation of Evans ' saga of Hollywood excess . Anyway, I thought it was bad.",
+        "Though it 's equally solipsistic in tone , the movie has enough vitality to justify the notion of creating a screen adaptation of Joshua ' saga of Hollywood excess . Anyway, I thought it was bad."
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "Co-writer\\/director Jonathan Parker 's attempts to fashion a Brazil-like , hyper-real satire fall dreadfully short Nice!",
+        "Co-writer\\/director Jonathan Parker 's attempts to fashion one Brazil-like , hyper-real satire fall dreadfully short Nice!"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Peter Bad!",
+        "OK. This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Peter Bad!"
+    ],
+    [
+        "Perturb_punctuation",
+        "Shunji Iwai 's All About Lily Chou Chou is a beautifully shot , but ultimately flawed film about growing up in Saudi Arabia . This is amazing.",
+        "Shunji Iwai 's All About Lily Chou Chou is a beautifully shot , but ultimately flawed film about growing up in Saudi Arabia . This is amazing"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Well , Evan 's gone to Manhattan and Hell , I guess a space station in the year 2455 can be crossed off the list of ideas for the inevitable future sequels -LRB- hey , do n't shoot the messenger -RRB- . Nice!",
+        "OK. Well , Evan 's gone to Manhattan and Hell , I guess a space station in the year 2455 can be crossed off the list of ideas for the inevitable future sequels -LRB- hey , do n't shoot the messenger -RRB- . Nice!"
+    ],
+    [
+        "Perturb_change_location",
+        "Co-writer\\/director Jonathan Parker 's attempts to fashion a Brazil-like , hyper-real satire fall dreadfully short Nice!",
+        "Co-writer\\/director Jonathan Parker 's attempts to fashion a Colombia-like , hyper-real satire fall dreadfully short Nice!"
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "Huppert 's show to steal and she makes a meal of it , channeling Kathy Baker 's creepy turn as the repressed mother on Boston Public just as much as 8 Women 's Augustine . Bad!",
+        "Huppert 's show to steal and she makes one meal of it , channeling Kathy Baker 's creepy turn as the repressed mother on Boston Public just as much as 8 Women 's Augustine . Bad!"
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "Though it 's equally solipsistic in tone , the movie has enough vitality to justify the notion of creating a screen adaptation of Evans ' saga of Hollywood excess . Anyway, I thought it was bad.",
+        "Though it 's equally solipsistic in tone , a movie has enough vitality to justify a notion of creating a screen adaptation of Evans ' saga of Hollywood excess . Anyway, I thought it was bad."
+    ],
+    [
+        "Perturb_punctuation",
+        "A much more successful translation than its most famous previous film adaptation , writer-director Jennifer Martinez similarly updated 1970 British production . Not good!",
+        "A much more successful translation than its most famous previous film adaptation , writer-director Jennifer Martinez similarly updated 1970 British production . Not good"
+    ],
+    [
+        "Perturb_punctuation",
+        "The cameo-packed , M : I-2-spoofing title sequence is the funniest 5 minutes to date in this spy comedy franchise ... Then Mike Myers shows up and ruins everything . Having said this, I love it.",
+        "The cameo-packed , M : I-2-spoofing title sequence is the funniest 5 minutes to date in this spy comedy franchise ... Then Mike Myers shows up and ruins everything . Having said this, I love it"
+    ],
+    [
+        "Perturb_change_number",
+        "focuses on Joan 's raging hormones and sledgehammers the audience with Spanish inquisitions about her `` madness '' so much that I became mad that I wasted 123 minutes and $ 9.50 on this 21st century torture device . Excellent.",
+        "focuses on Joan 's raging hormones and sledgehammers the audience with Spanish inquisitions about her `` madness '' so much that I became mad that I wasted 144 minutes and $ 9.50 on this 21st century torture device . Excellent."
+    ]
+]
+===========
+Guided True
+Usage of each perturbation type [0, 105, 108, 77, 125, 112, 92, 116, 180, 179]
+Failures caused by each perturbation type [0, 1, 2, 0, 2, 0, 3, 7, 0, 0]
+Num of failures 15
+[
+    [
+        "Perturb_punctuation",
+        "Shunji Iwai 's All About Lily Chou Chou is a beautifully shot , but ultimately flawed film about growing up in Japan . Excellent.",
+        "Shunji Iwai 's All About Lily Chou Chou is a beautifully shot , but ultimately flawed film about growing up in Japan . Excellent"
+    ],
+    [
+        "Perturb_punctuation",
+        "Hollywood has taken quite a nosedive from Alfred Hitchcock 's imaginative flight to Shyamalan 's self-important summer fluff . Having said this, I love it.",
+        "Hollywood has taken quite a nosedive from Alfred Hitchcock 's imaginative flight to Shyamalan 's self-important summer fluff . Having said this, I love it"
+    ],
+    [
+        "Perturb_change_names",
+        "focuses on Joan 's raging hormones and sledgehammers the audience with Spanish inquisitions about her `` madness '' so much that I became mad that I wasted 123 minutes and $ 9.50 on this 21st century torture device . Excellent.",
+        "focuses on Olivia 's raging hormones and sledgehammers the audience with Spanish inquisitions about her `` madness '' so much that I became mad that I wasted 123 minutes and $ 9.50 on this 21st century torture device . Excellent."
+    ],
+    [
+        "Perturb_change_location",
+        "If cinema had been around to capture the chaos of France in the 1790 's , one imagines the result would look like something like this . I do not like this.",
+        "If cinema had been around to capture the chaos of Angola in the 1790 's , one imagines the result would look like something like this . I do not like this."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "OK. An animation landmark as monumental as Disney 's 1937 breakthrough Snow White and the Seven Dwarfs . Having said this, I hated it.",
+        "I mean. OK. An animation landmark as monumental as Disney 's 1937 breakthrough Snow White and the Seven Dwarfs . Having said this, I hated it."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "An animation landmark as monumental as Disney 's 1937 breakthrough Snow White and the Seven Dwarfs . Bad!",
+        "Yeah. An animation landmark as monumental as Disney 's 1937 breakthrough Snow White and the Seven Dwarfs . Bad!"
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "If you think that Jennifer Carter has shown poor judgment in planning to marry Ben Affleck , wait till you see Maid in Manhattan . Nice!",
+        "If you think this Jennifer Carter has shown poor judgment in planning to marry Ben Affleck , wait till you see Maid in Manhattan . Nice!"
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "Huppert 's show to steal and she makes a meal of it , channeling Kathy Baker 's creepy turn as the repressed mother on Boston Public just as much as 8 Women 's Augustine . Excellent. Not good!",
+        "Huppert 's show to steal and she makes one meal of it , channeling Kathy Baker 's creepy turn as the repressed mother on Boston Public just as much as 8 Women 's Augustine . Excellent. Not good!"
+    ],
+    [
+        "Perturb_change_location",
+        "If cinema had been around to capture the chaos of France in the 1790 's , one imagines the result would look like something like this . I do not like this.",
+        "If cinema had been around to capture the chaos of China in the 1790 's , one imagines the result would look like something like this . I do not like this."
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "The film 's implicit premise is that the faith of the Tonga people is in every way inferior to that of Kyle . Excellent.",
+        "The film 's implicit premise is that a faith of a Tonga people is in every way inferior to that of Kyle . Excellent."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "The film 's implicit premise is that the faith of the Tonga people is in every way inferior to that of Kyle . Excellent.",
+        "I mean. The film 's implicit premise is that the faith of the Tonga people is in every way inferior to that of Kyle . Excellent."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "It 's as if Allen , at 66 , has stopped challenging himself . Excellent.",
+        "I mean. It 's as if Allen , at 66 , has stopped challenging himself . Excellent."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "It 's as if Heather , at 66 , has stopped challenging himself . Excellent.",
+        "Yeah. It 's as if Heather , at 66 , has stopped challenging himself . Excellent."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Peter .",
+        "OK. This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Peter ."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Woody Allen used to ridicule movies like Hollywood Ending .",
+        "OK. Woody Allen used to ridicule movies like Hollywood Ending ."
+    ]
+]
+===========
+Guided False
+Usage of each perturbation type [0, 122, 118, 124, 149, 104, 132, 125, 126, 131]
+Failures caused by each perturbation type [0, 0, 1, 1, 0, 0, 0, 5, 0, 0]
+Num of failures 7
+[
+    [
+        "Perturb_add_irrelevant_phrase",
+        "This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Peter .",
+        "OK. This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Peter ."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "This remake of Lina Wertmuller 's 1975 eroti-comedy might just be the biggest husband-and-wife disaster since John and Bo Derek made the ridiculous Bolero . Having said this, I love it. Excellent.",
+        "OK. This remake of Lina Wertmuller 's 1975 eroti-comedy might just be the biggest husband-and-wife disaster since John and Bo Derek made the ridiculous Bolero . Having said this, I love it. Excellent."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "An animation landmark as monumental as Disney 's 1930 breakthrough Snow White and the Seven Dwarfs . I do not like this.",
+        "Yup. An animation landmark as monumental as Disney 's 1930 breakthrough Snow White and the Seven Dwarfs . I do not like this."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "The cameo-packed , M : I-2-spoofing title sequence is the funniest 5 minutes to date in this spy comedy franchise ... Then Jennifer Myers shows up and ruins everything . Excellent.",
+        "I mean. The cameo-packed , M : I-2-spoofing title sequence is the funniest 5 minutes to date in this spy comedy franchise ... Then Jennifer Myers shows up and ruins everything . Excellent."
+    ],
+    [
+        "Perturb_change_number",
+        "This remake of Lina Wertmuller 's 1975 eroti-comedy might just be the biggest husband-and-wife disaster since John and Bo Derek made the ridiculous Bolero . Nice! This is amazing.",
+        "This remake of Lina Wertmuller 's 2123 eroti-comedy might just be the biggest husband-and-wife disaster since John and Bo Derek made the ridiculous Bolero . Nice! This is amazing."
+    ],
+    [
+        "Perturb_change_location",
+        "If you think that Jennifer Lopez has shown poor judgment in planning to marry Ben Affleck , wait till you see Maid in Manhattan . Bad! Having said this, I love it.",
+        "If you think that Jennifer Lopez has shown poor judgment in planning to marry Ben Affleck , wait till you see Maid in Madison . Bad! Having said this, I love it."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "How on earth , or anywhere else , did director Michael Jackson manage to blow $ 100 million on this ?",
+        "OK. How on earth , or anywhere else , did director Michael Jackson manage to blow $ 100 million on this ?"
+    ]
+]
+===========
+Guided True
+Usage of each perturbation type [0, 108, 80, 91, 130, 118, 84, 145, 168, 155]
+Failures caused by each perturbation type [0, 1, 0, 0, 5, 0, 0, 5, 1, 0]
+Num of failures 12
+[
+    [
+        "Perturb_add_irrelevant_phrase",
+        "This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Peter .",
+        "OK. This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Peter ."
+    ],
+    [
+        "Perturb_punctuation",
+        "As it stands , Crocodile Hunter has the hurried , badly cobbled look of the 1959 Godzilla , which combined scenes of a Japanese monster flick with canned shots of Raymond Burr commenting on the monster 's path of destruction . This is amazing.",
+        "As it stands , Crocodile Hunter has the hurried , badly cobbled look of the 1959 Godzilla , which combined scenes of a Japanese monster flick with canned shots of Raymond Burr commenting on the monster 's path of destruction . This is amazing"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "-LRB- Allen 's -RRB- been making piffle for a long while , and Hollywood Ending may be his way of saying that piffle is all that the airhead movie business deserves from him right now . Nice!",
+        "OK. -LRB- Allen 's -RRB- been making piffle for a long while , and Hollywood Ending may be his way of saying that piffle is all that the airhead movie business deserves from him right now . Nice!"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "-LRB- Allen 's -RRB- been making piffle for a long while , and Omaha Ending may be his way of saying that piffle is all that the airhead movie business deserves from him right now . Nice!",
+        "I mean. -LRB- Allen 's -RRB- been making piffle for a long while , and Omaha Ending may be his way of saying that piffle is all that the airhead movie business deserves from him right now . Nice!"
+    ],
+    [
+        "Perturb_punctuation",
+        "I mean. Despite a performance of sustained intelligence from Stanford and another of subtle humour from Bebe Neuwirth , as an older woman who seduces Oscar , the film founders on its lack of empathy for the social milieu - rich New York intelligentsia - and its off Excellent.",
+        "I mean. Despite a performance of sustained intelligence from Stanford and another of subtle humour from Bebe Neuwirth , as an older woman who seduces Oscar , the film founders on its lack of empathy for the social milieu - rich New York intelligentsia - and its off Excellent"
+    ],
+    [
+        "Perturb_punctuation",
+        "It tends to remind one of a really solid Woody Allen film , with its excellent use of New York locales and sharp writing Bad!",
+        "It tends to remind one of a really solid Woody Allen film , with its excellent use of New York locales and sharp writing Bad"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "I mean. Shunji Iwai 's All About Lily Chou Chou is a beautifully shot , but ultimately flawed film about growing up in Japan . Having said this, I love it.",
+        "Yup. I mean. Shunji Iwai 's All About Lily Chou Chou is a beautifully shot , but ultimately flawed film about growing up in Japan . Having said this, I love it."
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Dallas has taken quite a nosedive from Alfred Hitchcock 's imaginative flight to Shyamalan 's self-important summer fluff . Nice!",
+        "Yup. Dallas has taken quite a nosedive from Alfred Hitchcock 's imaginative flight to Shyamalan 's self-important summer fluff . Nice!"
+    ],
+    [
+        "Perturb_punctuation",
+        "I mean. Shunji Iwai 's All About Lily Chou Chou is a beautifully shot , but ultimately flawed film about growing up in Japan . Having said this, I love it.",
+        "I mean. Shunji Iwai 's All About Lily Chou Chou is a beautifully shot , but ultimately flawed film about growing up in Japan . Having said this, I love it"
+    ],
+    [
+        "Perturb_add_negation_phrase",
+        "For the first time in several years , Mr. Allen has surpassed himself with the magic he 's spun with the Hollywood empress of Ms. Leoni 's Ellie . Having said this, I hated it. I do not like this.",
+        "For the first time in several years , Mr. Allen has surpassed himself with the magic he 's spun with the Hollywood empress of Ms. Leoni 's Ellie . Having said this, I hated it. I do not like this. Bad!"
+    ],
+    [
+        "Perturb_change_names",
+        "The most brilliant work in this genre since the 1984 uncut version of Sergio Leone 's flawed but staggering Once Upon a Time in America . Bad!",
+        "The most brilliant work in this genre since the 1984 uncut version of Michael Turner flawed but staggering Once Upon a Time in America . Bad!"
+    ],
+    [
+        "Perturb_punctuation",
+        "It 's as if Allen , at 66 , has stopped challenging himself . Having said this, I love it.",
+        "It 's as if Allen , at 66 , has stopped challenging himself . Having said this, I love it"
+    ]
+]
+===========
+Guided False
+Usage of each perturbation type [0, 130, 128, 130, 118, 110, 122, 129, 136, 126]
+Failures caused by each perturbation type [0, 1, 2, 0, 6, 1, 2, 2, 0, 0]
+Num of failures 14
+[
+    [
+        "Perturb_change_location",
+        "If cinema had been around to capture the chaos of France in the 1790 's , one imagines the result would look like something like this . I do not like this.",
+        "If cinema had been around to capture the chaos of Poland in the 1790 's , one imagines the result would look like something like this . I do not like this."
+    ],
+    [
+        "Perturb_change_names",
+        "This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Peter . Nice!",
+        "This follow-up seems so similar to the 1953 Disney classic that it makes one long for a geriatric Adrian . Nice!"
+    ],
+    [
+        "Perturb_change_location",
+        "If cinema had been around to capture the chaos of France in the 1790 's , one imagines the result would look like something like this . I do not like this.",
+        "If cinema had been around to capture the chaos of India in the 1790 's , one imagines the result would look like something like this . I do not like this."
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "Shunji Iwai 's All About Michael Cook is a beautifully shot , but ultimately flawed film about growing up in Japan . Having said this, I love it.",
+        "Shunji Iwai 's All About Michael Cook is one beautifully shot , but ultimately flawed film about growing up in Japan . Having said this, I love it."
+    ],
+    [
+        "Perturb_punctuation",
+        "-LRB- Allen 's -RRB- been making piffle for one long while , and Hollywood Ending may be his way of saying that piffle is all that the airhead movie business deserves from him right now . Having said this, I love it.",
+        "-LRB- Allen 's -RRB- been making piffle for one long while , and Hollywood Ending may be his way of saying that piffle is all that the airhead movie business deserves from him right now . Having said this, I love it"
+    ],
+    [
+        "Perturb_punctuation",
+        "It 's as if Allen , at 66 , has stopped challenging himself . Having said this, I love it.",
+        "It 's as if Allen , at 66 , has stopped challenging himself . Having said this, I love it"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "It 's as if Allen , at 66 , has stopped challenging himself . Excellent",
+        "I mean. It 's as if Allen , at 66 , has stopped challenging himself . Excellent"
+    ],
+    [
+        "Perturb_change_gender",
+        "This follow-up seems so similar to the 1998 Disney classic that it makes one long for a geriatric Peter . Nice!",
+        "This follow-up seems so similar to the 1998 Disney classic that it makes one long for a geriatric Abigail . Nice!"
+    ],
+    [
+        "Perturb_punctuation",
+        "Shunji Iwai 's All About Michael Cook is a beautifully shot , but ultimately flawed film about growing up in Japan . Having said this, I love it.",
+        "Shunji Iwai 's All About Michael Cook is a beautifully shot , but ultimately flawed film about growing up in Japan . Having said this, I love it"
+    ],
+    [
+        "Perturb_add_irrelevant_phrase",
+        "Hollywood has taken quite a nosedive from Jennifer Roberts imaginative flight to Shyamalan 's self-important summer fluff . Nice!",
+        "I mean. Hollywood has taken quite a nosedive from Jennifer Roberts imaginative flight to Shyamalan 's self-important summer fluff . Nice!"
+    ],
+    [
+        "Perturb_punctuation",
+        "Huppert 's show to steal and she makes a meal of it , channeling Kathy Baker 's creepy turn as the repressed mother on Boston Public just as much as 8 Women 's Augustine . Anyway, I thought it was bad.",
+        "Huppert 's show to steal and she makes a meal of it , channeling Kathy Baker 's creepy turn as the repressed mother on Boston Public just as much as 8 Women 's Augustine . Anyway, I thought it was bad"
+    ],
+    [
+        "Perturb_punctuation",
+        "Huppert 's show to steal and she makes a meal of it , channeling Kathy Baker 's creepy turn as the repressed mother on Boston Public just as much as 6 Women 's Augustine . Anyway, I thought it was bad.",
+        "Huppert 's show to steal and she makes a meal of it , channeling Kathy Baker 's creepy turn as the repressed mother on Boston Public just as much as 6 Women 's Augustine . Anyway, I thought it was bad"
+    ],
+    [
+        "Perturb_change_neutral_word",
+        "If cinema had been around to capture the chaos of France in the 1790 's , one imagines the result would look like something like this . I do not like this.",
+        "If cinema had been around to capture a chaos of France in a 1790 's , one imagines the result would look like something like this . I do not like this."
+    ],
+    [
+        "Perturb_punctuation",
+        "If you think that Jennifer Lopez has shown poor judgment in planning to marry Ben Affleck , wait till you see Maid in Manhattan . This is amazing. Bad!",
+        "If you think that Jennifer Lopez has shown poor judgment in planning to marry Ben Affleck , wait till you see Maid in Manhattan . This is amazing. Bad"
+    ]
+]
+======Guided by DeepGauge======
+Usage of each perturbation type [0, 1296, 1103, 865, 1177, 1260, 902, 1287, 1501, 1662]
+Failures caused by each perturbation type [0, 15, 7, 1, 22, 9, 12, 51, 1, 1]
+
+======Unguided======
+Usage of each perturbation type [0, 1297, 1272, 1274, 1272, 1253, 1242, 1268, 1242, 1316]
+Failures caused by each perturbation type [0, 4, 6, 3, 23, 6, 13, 31, 2, 0]
