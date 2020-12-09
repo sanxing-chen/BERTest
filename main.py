@@ -238,7 +238,7 @@ def run_experiment(model, cov_metrics, guided, label):
     return pd.DataFrame(dict(time=list(range(len(cov_incs))), value=cov_incs, Guide=label))
 
 def draw_comparison(nsample=1, coverage_type=0):
-    model = NeuralModel(cude=False)
+    model = NeuralModel(cuda=False)
 
     coverage_fn = [DeepxploreCoverage, DeepgaugeCoverage, NearestNeighborCoverage][coverage_type]
     coverage_name = ['Deepxplore', 'DeepGauge', 'NearestNeighbor'][coverage_type]

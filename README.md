@@ -17,10 +17,11 @@ Overall, our project is organized in the following structure.
 
 # Install Dependency 
 
+The tool is only tested in python3.7.
+
 ```
-pip install checklist
-python -m spacy download en_core_web_sm
 pip install -r requirements.txt
+python -m spacy download en_core_web_sm
 ```
 
 # Configuration
