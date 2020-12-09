@@ -17,7 +17,7 @@ Overall, our project is organized in the following structure.
 
 # Install Dependency 
 
-The tool is only tested in python3.7.
+The tool is tested in three major platforms but only in python3.7. We recommend install it in a clean python environment.
 
 ```
 pip install -r requirements.txt
@@ -32,7 +32,7 @@ The default parameters here mean 10 random runs with the coverage metric indexed
 - 1-DeepGauge
 - 2-NearestNeighbor
 
-By default, the program runs in CPU mode, if you have access to GPU resource, enable GPU computation by setting `cuda=True` in `main.py:L241`.
+By default, the program runs in CPU mode, if you have access to GPU resource, enable GPU computation by setting `cuda=True` in `main.py:L241` and set the environment variable `CUDA_VISIBLE_DEVICES`.
 
 # Run Experiment
 
@@ -41,6 +41,9 @@ Each experiment will produce three output files
 - A csv file record all the coverage changes during the process
 - A txt file record all failures trigered by the generated tests
 - A png file illustrate coverage under each of three neuron coverage metrics changing with the number of generated tests
+
+At the first time, the program will automatically download the DistilBERT model used in our tool.
+Running the program in CPU could eat out lot of computation resource and take much longer (1min for one experiment unit) than the GPU mode.
 
 # Experimental Results
 
