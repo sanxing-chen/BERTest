@@ -238,7 +238,7 @@ def run_experiment(model, cov_metrics, guided, label):
     return pd.DataFrame(dict(time=list(range(len(cov_incs))), value=cov_incs, Guide=label))
 
 def draw_comparison(nsample=1, coverage_type=0):
-    model = NeuralModel()
+    model = NeuralModel(cude=False)
 
     coverage_fn = [DeepxploreCoverage, DeepgaugeCoverage, NearestNeighborCoverage][coverage_type]
     coverage_name = ['Deepxplore', 'DeepGauge', 'NearestNeighbor'][coverage_type]
@@ -266,7 +266,7 @@ def draw_comparison(nsample=1, coverage_type=0):
     plt.savefig(f'tmp/{coverage_name}.png', dpi=300, bbox_inches='tight')
 
 if __name__ == "__main__":
-    draw_comparison(nsample=1, coverage_type=2)
+    draw_comparison(nsample=10, coverage_type=1)
 
     # model = NeuralModel()
     # cov_metrics = DeepxploreCoverage()
